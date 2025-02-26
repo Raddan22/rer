@@ -15,11 +15,6 @@ p.ex5{
     color: #00ff00;
     background-color:#ff0000;
    }
-   body.body5{
-    background-image: url("../images/ball.jpg");
-    background-repeat: no-repeat;
-    background-position: 5cm 5cm
-   }
    
 p.ex6{font-family: Arial, Candara, Century-Gothic, sans-serif}
 h1.ex7{
