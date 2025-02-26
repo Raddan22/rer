@@ -17,18 +17,21 @@ p.ex5{
    }
    
 p.ex6{font-family: Arial, Candara, Century-Gothic, sans-serif}
+
+
 h1.ex7{
-    font-family: Arial, Candara, Century-Gothic, sans-serif;
-    font-style: normal;
-   }
-   h2.ex7{
-    font-family: Times New Roman, Georgia, serif;
-    font-style: italic;
-   }
-   p.ex7{
-    font-family: Times New Roman, Georgia, serif;
-    font-style: oblique;
-   }
+ font-family: Arial, Candara, Century-Gothic, sans-serif;
+ font-style: normal;
+}
+h2.ex7{
+ font-family: Times New Roman, Georgia, serif;
+ font-style: italic;
+}
+p.ex7{
+ font-family: Times New Roman, Georgia, serif;
+ font-style: oblique;
+}
+
    p.ex8{
     font-family: Arial, Candara, Century-Gothic, sans-serif;
     font-style: normal;
@@ -62,9 +65,5 @@ h1.ex10{
    font-family: arial, sans-serif;
    }
    
-body.body5{
-    background-image: url("/ball.jpg");
-    background-repeat: no-repeat;
-    background-position: 100% 25%;
-   }
+
    
