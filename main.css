@@ -1,0 +1,262 @@
+   .desktop-1-main-child {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	background: linear-gradient(180deg, #4bff66, #e55e5e);
+  	width: 1440px;
+  	height: 3707px;
+}
+.desktop-1-main-item {
+  	position: absolute;
+  	top: 16px;
+  	left: 464px;
+  	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  	border-radius: 6px;
+  	background-color: #90e6c1;
+  	width: 915px;
+  	height: 92px;
+}
+.welcome {
+  	position: absolute;
+  	top: 453px;
+  	left: 463px;
+  	display: inline-block;
+  	width: 514px;
+  	height: 71px;
+}
+.media {
+  	position: absolute;
+  	height: 97.46%;
+  	width: 20.14%;
+  	top: 2.5%;
+  	left: 52.13%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+.me {
+  	position: absolute;
+  	height: 97.46%;
+  	width: 19.45%;
+  	top: 2.5%;
+  	left: 24.4%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+.home {
+  	position: absolute;
+  	height: 100%;
+  	width: 19.45%;
+  	top: 0%;
+  	left: 0%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+.news {
+  	position: absolute;
+  	height: 100%;
+  	width: 19.45%;
+  	top: 0%;
+  	left: 80.55%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+.component-1 {
+  	position: absolute;
+  	top: 37px;
+  	left: 502px;
+  	width: 869px;
+  	height: 63px;
+  	font-size: 32px;
+  	color: #ff0000;
+}
+.svgjsg1660-icon {
+  	position: absolute;
+  	height: 62.14%;
+  	width: 40%;
+  	top: 0%;
+  	right: 30%;
+  	bottom: 37.86%;
+  	left: 30%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.svgjsg1661-icon {
+  	position: absolute;
+  	height: 27.49%;
+  	width: 100%;
+  	top: 72.46%;
+  	right: 0%;
+  	bottom: 0.04%;
+  	left: 0%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.frame {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 438px;
+  	height: 271px;
+  	overflow: hidden;
+}
+.generic-input-empty {
+  	position: absolute;
+  	top: 927px;
+  	left: 414px;
+  	border-radius: 4px;
+  	border: 1px solid #212121;
+  	box-sizing: border-box;
+  	width: 615px;
+  	height: 295px;
+  	overflow: hidden;
+}
+.image-18-icon {
+  	position: absolute;
+  	top: 603px;
+  	left: -7px;
+  	width: 1454.4px;
+  	height: 758px;
+  	object-fit: cover;
+}
+.image-19-icon {
+  	position: absolute;
+  	top: 1602px;
+  	left: 0px;
+  	width: 1441.6px;
+  	height: 548px;
+  	object-fit: cover;
+}
+.my-projects {
+  	position: absolute;
+  	top: 330px;
+  	left: 201px;
+  	font-size: 96px;
+  	display: inline-block;
+  	width: 1100px;
+  	height: 123px;
+}
+.waxom {
+  	position: absolute;
+  	top: 1440px;
+  	left: 414px;
+  	display: inline-block;
+  	width: 615px;
+  	height: 82px;
+}
+.team {
+  	position: absolute;
+  	top: 2181px;
+  	left: 414px;
+  	display: inline-block;
+  	width: 615px;
+  	height: 82px;
+}
+.shop {
+  	position: absolute;
+  	top: 3221px;
+  	left: 406px;
+  	display: inline-block;
+  	width: 615px;
+  	height: 82px;
+}
+.image-20-icon {
+  	position: absolute;
+  	top: 2321px;
+  	left: -15px;
+  	width: 1472px;
+  	height: 762px;
+  	object-fit: cover;
+}
+.desktop-1-main {
+  	width: 100%;
+  	position: relative;
+  	background-color: #fff;
+  	height: 3456px;
+  	overflow: hidden;
+  	text-align: center;
+  	font-size: 64px;
+  	color: #000;
+  	font-family: 'Kay Pho Du';
+}
+
+@media (max-width: 768px) {
+  .desktop-1-main-child {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(180deg, #4bff66, #e55e5e);
+    position: relative;
+  }
+
+  .desktop-1-main-item {
+    width: 90%;
+    left: 5%;
+    top: 16px;
+    height: auto;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  .component-1 {
+    position: static;
+    width: 100%;
+    font-size: 24px;
+    color: #ff0000;
+    margin-top: 20px;
+  }
+
+  .welcome {
+    position: static;
+    width: 90%;
+    margin: 20px auto;
+    font-size: 24px;
+  }
+
+  .my-projects,
+  .waxom,
+  .team,
+  .shop {
+    position: static;
+    width: 90%;
+    margin: 40px auto;
+    font-size: 36px;
+  }
+
+  .media,
+  .me,
+  .home,
+  .news {
+    position: static;
+    display: inline-block;
+    width: 45%;
+    margin: 5px 2.5%;
+    height: auto;
+  }
+
+  .frame,
+  .generic-input-empty {
+    position: static;
+    width: 90%;
+    margin: 20px auto;
+    height: auto;
+  }
+
+  .image-18-icon,
+  .image-19-icon,
+  .image-20-icon {
+    position: static;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 20px 0;
+  }
+
+  .desktop-1-main {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: visible;
+    text-align: center;
+  }
+}

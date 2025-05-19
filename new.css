@@ -1,0 +1,326 @@
+ .desktop-1-child {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	background: linear-gradient(180deg, #4bff66, #e55e5e);
+  	width: 1440px;
+  	height: 2097px;
+}
+.generic-input-empty {
+  	position: absolute;
+  	top: 331px;
+  	left: 0px;
+  	border-radius: 4px;
+  	border: 1px solid #212121;
+  	box-sizing: border-box;
+  	width: 1419px;
+  	height: 266px;
+  	overflow: hidden;
+}
+.generic-input-empty1 {
+  	position: absolute;
+  	top: 687px;
+  	left: 0px;
+  	border-radius: 4px;
+  	border: 1px solid #212121;
+  	box-sizing: border-box;
+  	width: 1419px;
+  	height: 267px;
+  	overflow: hidden;
+}
+.generic-input-empty2 {
+  	position: absolute;
+  	top: 1043px;
+  	left: 0px;
+  	border-radius: 4px;
+  	border: 1px solid #212121;
+  	box-sizing: border-box;
+  	width: 1419px;
+  	height: 268px;
+  	overflow: hidden;
+}
+.generic-input-empty3 {
+  	position: absolute;
+  	top: 1399px;
+  	left: 0px;
+  	border-radius: 4px;
+  	border: 1px solid #212121;
+  	box-sizing: border-box;
+  	width: 1419px;
+  	height: 269px;
+  	overflow: hidden;
+}
+.generic-input-empty4 {
+  	position: absolute;
+  	top: 1758px;
+  	left: 0px;
+  	border-radius: 4px;
+  	border: 1px solid #212121;
+  	box-sizing: border-box;
+  	width: 1419px;
+  	height: 269px;
+  	overflow: hidden;
+}
+.svgjsg1660-icon {
+  	position: absolute;
+  	height: 62.14%;
+  	width: 40%;
+  	top: 0%;
+  	right: 30%;
+  	bottom: 37.86%;
+  	left: 30%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.svgjsg1661-icon {
+  	position: absolute;
+  	height: 27.49%;
+  	width: 100%;
+  	top: 72.46%;
+  	right: 0%;
+  	bottom: 0.04%;
+  	left: 0%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.frame {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 438px;
+  	height: 271px;
+  	overflow: hidden;
+}
+.image-15-icon {
+  	position: absolute;
+  	top: 1395px;
+  	left: 0px;
+  	width: 478px;
+  	height: 269px;
+  	object-fit: cover;
+}
+.image-12-icon {
+  	position: absolute;
+  	top: 331px;
+  	left: 0px;
+  	width: 473px;
+  	height: 266px;
+  	object-fit: cover;
+}
+.image-13-icon {
+  	position: absolute;
+  	top: 687px;
+  	left: -7px;
+  	width: 475px;
+  	height: 267px;
+  	object-fit: cover;
+}
+.image-14-icon {
+  	position: absolute;
+  	top: 1045px;
+  	left: 0px;
+  	width: 476px;
+  	height: 268px;
+  	object-fit: cover;
+}
+.image-16-icon {
+  	position: absolute;
+  	top: 1759px;
+  	left: -6px;
+  	width: 479px;
+  	height: 269px;
+  	object-fit: cover;
+}
+.bitget-wallet-surpasses {
+  	position: absolute;
+  	top: 1761px;
+  	left: 476px;
+  	display: inline-block;
+  	width: 943px;
+  	height: 266px;
+}
+.american-student-demands {
+  	position: absolute;
+  	top: 1398px;
+  	left: 477px;
+  	display: inline-block;
+  	width: 943px;
+  	height: 266px;
+}
+.google-could-pay {
+  	position: absolute;
+  	top: 1035px;
+  	left: 493px;
+  	display: inline-block;
+  	width: 943px;
+  	height: 266px;
+}
+.fieldstone-bio-creates {
+  	position: absolute;
+  	top: 691px;
+  	left: 468px;
+  	display: inline-block;
+  	width: 943px;
+  	height: 266px;
+}
+.elon-musks-grok {
+  	position: absolute;
+  	top: 331px;
+  	left: 468px;
+  	display: inline-block;
+  	width: 943px;
+  	height: 266px;
+}
+.desktop-1-item {
+  	position: absolute;
+  	top: 16px;
+  	left: 464px;
+  	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  	border-radius: 6px;
+  	background-color: #90e6c1;
+  	width: 915px;
+  	height: 92px;
+}
+.media {
+  	position: absolute;
+  	height: 97.46%;
+  	width: 20.14%;
+  	top: 2.5%;
+  	left: 52.13%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+.me {
+  	position: absolute;
+  	height: 97.46%;
+  	width: 19.45%;
+  	top: 2.5%;
+  	left: 24.4%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+.home {
+  	position: absolute;
+  	height: 100%;
+  	width: 19.45%;
+  	top: 0%;
+  	left: 0%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+.news {
+  	position: absolute;
+  	height: 100%;
+  	width: 19.45%;
+  	top: 0%;
+  	left: 80.55%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+.component-1 {
+  	position: absolute;
+  	top: 37px;
+  	left: 502px;
+  	width: 869px;
+  	height: 63px;
+  	font-size: 32px;
+  	color: #ff0000;
+}
+.desktop-1 {
+  	width: 100%;
+  	position: relative;
+  	background-color: #fff;
+  	height: 2097px;
+  	overflow: hidden;
+  	text-align: center;
+  	font-size: 50px;
+  	color: #fff;
+  	font-family: 'Kay Pho Du';
+}
+
+@media (max-width: 768px) {
+  .desktop-1-child {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(180deg, #4bff66, #e55e5e);
+  }
+
+  .desktop-1 {
+    height: auto;
+    font-size: 20px;
+    overflow: visible;
+    padding: 10px;
+  }
+
+  .component-1,
+  .desktop-1-item {
+    position: relative;
+    width: 90%;
+    margin: 10px auto;
+    height: auto;
+    font-size: 18px;
+  }
+
+  .home, .me, .media, .news {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+  }
+
+  .generic-input-empty,
+  .generic-input-empty1,
+  .generic-input-empty2,
+  .generic-input-empty3,
+  .generic-input-empty4 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 6px;
+  }
+
+  .image-12-icon,
+  .image-13-icon,
+  .image-14-icon,
+  .image-15-icon,
+  .image-16-icon {
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .elon-musks-grok,
+  .fieldstone-bio-creates,
+  .google-could-pay,
+  .american-student-demands,
+  .bitget-wallet-surpasses {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #000;
+  }
+
+  .frame {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .svgjsg1660-icon,
+  .svgjsg1661-icon {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+}

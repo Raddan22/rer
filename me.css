@@ -1,0 +1,256 @@
+.desktop-2-child {
+  	position: absolute;
+  	top: -120px;
+  	left: -44px;
+  	background: linear-gradient(180deg, #4bff66, #e55e5e);
+  	width: 1507px;
+  	height: 1932px;
+}
+.generic-image-round-69 {
+  	position: absolute;
+  	top: 4709px;
+  	left: 131px;
+  	width: 192px;
+  	height: 191px;
+}
+.generic-input-empty {
+  	position: absolute;
+  	top: 4971px;
+  	left: 265px;
+  	border-radius: 4px;
+  	border: 1px solid #212121;
+  	box-sizing: border-box;
+  	width: 938px;
+  	height: 102px;
+  	overflow: hidden;
+}
+.generic-input-empty1 {
+  	position: absolute;
+  	top: 5178px;
+  	left: 265px;
+  	border-radius: 4px;
+  	border: 1px solid #212121;
+  	box-sizing: border-box;
+  	width: 938px;
+  	height: 102px;
+  	overflow: hidden;
+}
+.generic-input-empty2 {
+  	position: absolute;
+  	top: 5385px;
+  	left: 265px;
+  	border-radius: 4px;
+  	border: 1px solid #212121;
+  	box-sizing: border-box;
+  	width: 938px;
+  	height: 102px;
+  	overflow: hidden;
+}
+.svgjsg1660-icon {
+  	position: absolute;
+  	height: 62.14%;
+  	width: 40%;
+  	top: 0%;
+  	right: 30%;
+  	bottom: 37.86%;
+  	left: 30%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.svgjsg1661-icon {
+  	position: absolute;
+  	height: 27.49%;
+  	width: 100%;
+  	top: 72.46%;
+  	right: 0%;
+  	bottom: 0.04%;
+  	left: 0%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.frame {
+  	position: absolute;
+  	top: 15px;
+  	left: 8px;
+  	width: 438px;
+  	height: 271px;
+  	overflow: hidden;
+}
+.icon {
+  	position: absolute;
+  	top: 458px;
+  	left: 64px;
+  	width: 382px;
+  	height: 330px;
+  	object-fit: cover;
+}
+.is-a-ukrainian {
+  	position: absolute;
+  	top: 847px;
+  	left: 80px;
+  	color: #fff;
+  	display: inline-block;
+  	width: 1262px;
+  	height: 871px;
+}
+.gmailcom {
+  	position: absolute;
+  	top: 468px;
+  	left: 581px;
+  	display: inline-block;
+  	width: 707px;
+  	height: 88px;
+}
+.div {
+  	position: absolute;
+  	top: 612px;
+  	left: 578px;
+  	display: inline-block;
+  	width: 710px;
+  	height: 83px;
+}
+.desktop-2-item {
+  	position: absolute;
+  	top: 21px;
+  	left: 502px;
+  	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  	border-radius: 6px;
+  	background-color: #90e6c1;
+  	width: 915px;
+  	height: 92px;
+}
+.media {
+  	position: absolute;
+  	height: 97.46%;
+  	width: 20.14%;
+  	top: 2.5%;
+  	left: 52.13%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+.me {
+  	position: absolute;
+  	height: 97.46%;
+  	width: 19.45%;
+  	top: 2.5%;
+  	left: 24.4%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+.home {
+  	position: absolute;
+  	height: 100%;
+  	width: 19.45%;
+  	top: 0%;
+  	left: 0%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+.news {
+  	position: absolute;
+  	height: 100%;
+  	width: 19.45%;
+  	top: 0%;
+  	left: 80.55%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+.component-1 {
+  	position: absolute;
+  	top: 38px;
+  	left: 525px;
+  	width: 869px;
+  	height: 63px;
+  	text-align: center;
+  	font-size: 32px;
+  	color: #ff0000;
+}
+.desktop-2 {
+  	width: 100%;
+  	position: relative;
+  	background-color: #fff;
+  	height: 1812px;
+  	overflow: hidden;
+  	text-align: left;
+  	font-size: 58px;
+  	color: #000;
+  	font-family: 'Kay Pho Du';
+}
+
+@media (max-width: 768px) {
+  .desktop-2-child {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, #4bff66, #e55e5e);
+  }
+
+  .desktop-2 {
+    height: auto;
+    padding: 10px;
+    overflow: visible;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .desktop-2-item,
+  .component-1 {
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+    height: auto;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .media, .me, .home, .news {
+    position: static;
+    display: inline-block;
+    width: 45%;
+    margin: 5px 2.5%;
+    height: auto;
+    text-align: center;
+  }
+
+  .generic-image-round-69,
+  .icon,
+  .frame {
+    position: relative;
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px auto;
+  }
+
+  .is-a-ukrainian,
+  .gmailcom,
+  .div {
+    position: static;
+    width: 90%;
+    margin: 20px auto;
+    font-size: 18px;
+  }
+
+  .generic-input-empty,
+  .generic-input-empty1,
+  .generic-input-empty2 {
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+    height: auto;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .svgjsg1660-icon,
+  .svgjsg1661-icon {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+}

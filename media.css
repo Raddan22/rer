@@ -1,0 +1,309 @@
+  .desktop-2-child {
+  	position: absolute;
+  	top: -155px;
+  	left: -15px;
+  	background: linear-gradient(180deg, #4bff66, #e55e5e);
+  	width: 1455px;
+  	height: 1932px;
+}
+.generic-image-round-106 {
+  	position: absolute;
+  	top: 591px;
+  	left: 242px;
+  	width: 168px;
+  	height: 169px;
+}
+.generic-input-empty {
+  	position: absolute;
+  	top: 811px;
+  	left: 170px;
+  	border-radius: 4px;
+  	border: 1px solid #212121;
+  	box-sizing: border-box;
+  	width: 315px;
+  	height: 81px;
+  	overflow: hidden;
+}
+.generic-input-empty1 {
+  	position: absolute;
+  	top: 1450px;
+  	left: 170px;
+  	border-radius: 4px;
+  	border: 1px solid #212121;
+  	box-sizing: border-box;
+  	width: 315px;
+  	height: 81px;
+  	overflow: hidden;
+}
+.generic-input-empty2 {
+  	position: absolute;
+  	top: 811px;
+  	left: 548px;
+  	border-radius: 4px;
+  	border: 1px solid #212121;
+  	box-sizing: border-box;
+  	width: 316px;
+  	height: 81px;
+  	overflow: hidden;
+}
+.generic-input-empty3 {
+  	position: absolute;
+  	top: 1450px;
+  	left: 548px;
+  	border-radius: 4px;
+  	border: 1px solid #212121;
+  	box-sizing: border-box;
+  	width: 316px;
+  	height: 81px;
+  	overflow: hidden;
+}
+.generic-input-empty4 {
+  	position: absolute;
+  	top: 811px;
+  	left: 927px;
+  	border-radius: 4px;
+  	border: 1px solid #212121;
+  	box-sizing: border-box;
+  	width: 315px;
+  	height: 81px;
+  	overflow: hidden;
+}
+.generic-input-empty5 {
+  	position: absolute;
+  	top: 1450px;
+  	left: 927px;
+  	border-radius: 4px;
+  	border: 1px solid #212121;
+  	box-sizing: border-box;
+  	width: 315px;
+  	height: 81px;
+  	overflow: hidden;
+}
+.svgjsg1660-icon {
+  	position: absolute;
+  	height: 62.14%;
+  	width: 40%;
+  	top: 0%;
+  	right: 30%;
+  	bottom: 37.86%;
+  	left: 30%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.svgjsg1661-icon {
+  	position: absolute;
+  	height: 27.49%;
+  	width: 100%;
+  	top: 72.46%;
+  	right: 0%;
+  	bottom: 0.04%;
+  	left: 0%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.frame {
+  	position: absolute;
+  	top: 30px;
+  	left: 23px;
+  	width: 438px;
+  	height: 271px;
+  	overflow: hidden;
+}
+.raddan {
+  	position: absolute;
+  	top: 811px;
+  	left: 929px;
+  	display: inline-block;
+  	width: 308px;
+  	height: 81px;
+}
+.raddan1 {
+  	position: absolute;
+  	top: 811px;
+  	left: 177px;
+  	display: inline-block;
+  	width: 308px;
+  	height: 81px;
+}
+.raddan2 {
+  	position: absolute;
+  	top: 1449px;
+  	left: 929px;
+  	display: inline-block;
+  	width: 308px;
+  	height: 81px;
+}
+.raddann {
+  	position: absolute;
+  	top: 811px;
+  	left: 548px;
+  	display: inline-block;
+  	width: 308px;
+  	height: 81px;
+}
+.image-7-icon {
+  	position: absolute;
+  	top: 606px;
+  	left: 554px;
+  	width: 303px;
+  	height: 171px;
+  	object-fit: cover;
+}
+.image-10-icon {
+  	position: absolute;
+  	top: 1214px;
+  	left: 603px;
+  	width: 234px;
+  	height: 234px;
+  	object-fit: cover;
+}
+.raddan22 {
+  	position: absolute;
+  	top: 1449px;
+  	left: 170px;
+  	display: inline-block;
+  	width: 315px;
+  	height: 82px;
+}
+.image-9-icon {
+  	position: absolute;
+  	top: 1234px;
+  	left: 231px;
+  	width: 193px;
+  	height: 193px;
+  	object-fit: cover;
+}
+.image-6-icon {
+  	position: absolute;
+  	top: 572px;
+  	left: 190px;
+  	width: 275px;
+  	height: 226px;
+  	object-fit: cover;
+}
+.image-8-icon {
+  	position: absolute;
+  	top: 583px;
+  	left: 976px;
+  	width: 215px;
+  	height: 215px;
+  	object-fit: cover;
+}
+.image-11-icon {
+  	position: absolute;
+  	top: 1214px;
+  	left: 1016px;
+  	width: 151px;
+  	height: 226px;
+  	object-fit: cover;
+}
+.raddan3 {
+  	position: absolute;
+  	top: 1448px;
+  	left: 544px;
+  	display: inline-block;
+  	width: 320px;
+  	height: 83px;
+}
+.desktop-2-item {
+  	position: absolute;
+  	top: 23px;
+  	left: 504px;
+  	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  	border-radius: 6px;
+  	background-color: #90e6c1;
+  	width: 915px;
+  	height: 92px;
+}
+.desktop-2 {
+  	width: 100%;
+  	position: relative;
+  	background-color: #fff;
+  	height: 1596px;
+  	overflow: hidden;
+  	text-align: center;
+  	font-size: 64px;
+  	color: #000;
+  	font-family: 'Kay Pho Du';
+}
+
+.component-1 {
+  	position: absolute;
+  	top: 38px;
+  	left: 525px;
+  	width: 869px;
+  	height: 63px;
+  	text-align: center;
+  	font-size: 32px;
+  	color: #ff0000;
+}
+@media (max-width: 768px) {
+  .desktop-2-child {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, #4bff66, #e55e5e);
+  }
+
+  .desktop-2 {
+    height: auto;
+    padding: 10px;
+    font-size: 24px;
+    overflow: visible;
+  }
+
+  .desktop-2-item,
+  .component-1 {
+    position: relative;
+    width: 90%;
+    margin: 10px auto;
+    height: auto;
+    font-size: 20px;
+  }
+
+  .frame,
+  .image-6-icon,
+  .image-7-icon,
+  .image-8-icon,
+  .image-9-icon,
+  .image-10-icon,
+  .image-11-icon,
+  .generic-image-round-106 {
+    position: relative;
+    width: 80%;
+    height: auto;
+    margin: 10px auto;
+  }
+
+  .generic-input-empty,
+  .generic-input-empty1,
+  .generic-input-empty2,
+  .generic-input-empty3,
+  .generic-input-empty4,
+  .generic-input-empty5,
+  .raddan,
+  .raddan1,
+  .raddan2,
+  .raddann,
+  .raddan22,
+  .raddan3 {
+    position: relative;
+    width: 90%;
+    height: auto;
+    font-size: 16px;
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  .svgjsg1660-icon,
+  .svgjsg1661-icon {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+}
