@@ -1,0 +1,262 @@
+<body>
+<h3> Завдання 1.</h3>
+<p> Це звичайний HTML абзац.</p>
+<script language="JavaScript">
+document.write("Привіт! Мене звати Oleksandr Dubetskyi, студент групи ІПЗ-22")
+</script>
+<p>Знову звичайний HTML абзац.</p>
+<form>
+<input type="button" value="Click me" onClick="alert('Я народився 25.02.2007 року в місті Івано-Франківськ ')">
+</form>
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+   <meta charset="UTF-8">
+    <title>Завдання 2</title>
+    <script>
+        function calculation() {
+            let x = 12;
+            let y = 5;
+
+            let result = (x / y) + (y ** 2 / (1 - x * y));
+            alert("F = " + result);
+        }
+    </script>
+</head>
+<body>
+ <h3>Завдання 2</h3>
+    <form>
+        <input type="button" value="Calculate" onClick="calculation()">
+    </form>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 3</title>
+  <script>
+    function showMessage(msg) {
+      document.getElementById("output").value = msg;
+    }
+
+    function handleSelect() {
+      showMessage("Було виділено текст у полі вводу");
+    }
+
+    function handleMouseOut() {
+      showMessage("Мишка вийшла з тексту");
+    }
+  </script>
+</head>
+
+<body>
+  <h3>Завдання 3</h3>
+
+  <form name="main_form">
+    <input
+      type="text"
+      id="inputText"
+      size="50"
+      onSelect="handleSelect()"
+    
+    >
+    <br><br>
+    <input
+      type="text"
+      id="output"
+      size="50"
+      readonly
+  
+    >
+    <br><br> 
+    <span
+      onMouseOut="handleMouseOut()"
+      style="font-size: 18px; padding: 5px; border: 1px solid gray; display: inline-block; cursor: default;"
+    >
+      Наведи мишку сюди і виведи її
+    </span>
+  </form>
+</body>
+</html>
+
+<h3> Завдання 4
+</h3>
+<head>
+  <meta charset="UTF-8">
+
+  <script>
+    function fun() {
+      let x = parseFloat(form4.t_a.value);
+      let y = parseFloat(form4.t_b.value);
+      let z;
+
+      let xy = x * y;
+
+      if (xy < -100) {
+        z = x / (2 * y);
+      } else if (xy > 20) {
+        z = x ** 2 - x * y;
+      } else {
+        z = x ** 3 + 2;
+      }
+
+      form4.t_c.value = z;
+    }
+  </script>
+</head>
+<body>
+  <form id="form4" name="form4">
+    x: <input type="text" name="t_a" value="10"><br><br>
+    y: <input type="text" name="t_b" value="-2"><br><br>
+    z: <input type="text" name="t_c" readonly><br><br>
+    <input type="button" onClick="fun();" value="Розрахувати">
+  </form>
+</body>
+</html>
+
+
+
+<h3>Завдання 5</h3> 
+  <script>
+    function factorial(n) {
+      if (n === 0 || n === 1) return 1;
+      let result = 1;
+      for (let i = 2; i <= n; i++) {
+        result *= i;
+      }
+      return result;
+    }
+
+    function calcSum() {
+      let x = parseFloat(form5.t_a.value);
+      let y = parseFloat(form5.t_b.value);
+      let sum = 0.0;
+
+      for (let i = 3; i <= 6; i++) {
+        let term = Math.pow(-1, i + 1) * (x - y) / factorial(i);
+        sum += term;
+      }
+
+      form5.t_c.value = sum.toFixed(6);
+    }
+  </script>
+</head>
+<body>
+  <form id="form5" name="form5">
+    x = <input type="text" id="t_a" name="t_a" value=""><br><br>
+    y = <input type="text" id="t_b" name="t_b" value=""><br><br>
+    Результат: <input type="text" id="t_c" name="t_c" readonly><br><br>
+    <input type="button" onClick="calcSum();" value="Розрахувати">
+  </form>
+</body>
+</html>
+
+<h3>Завдання 6</h3>
+<head>
+  <script>
+    
+    const product = ["Олівець", "Огірок", "Окуляри"];
+    const quantity = [100, 100, 70];
+    const cost = [5, 20, 450];
+
+    let currentIndex = -1;
+
+    function showProductInfo() {
+      const input = document.getElementById("productName").value.trim();
+      currentIndex = product.indexOf(input);
+
+      if (currentIndex !== -1) {
+        document.getElementById("quantity").value = quantity[currentIndex];
+        document.getElementById("cost").value = cost[currentIndex];
+
+      } else {
+
+        document.getElementById("cost").value = "";
+        document.getElementById("total").value = "";
+        currentIndex = -1;
+      }
+    }
+
+    function showTotal() {
+      if (currentIndex !== -1) {
+        const total = quantity[currentIndex] * cost[currentIndex];
+        document.getElementById("total").value = `Загальна вартість товару "${product[currentIndex]}" = ${total.toFixed(2)} грн`;
+      } 
+    }
+  </script>
+</head>
+<body>
+
+
+  <label for="productName">Введіть назву товару:</label><br>
+  <input type="text" id="productName" size="30" placeholder=""><br><br>
+
+  <button onclick="showProductInfo()">Наявна кількість і вартість</button><br><br>
+
+  <label>Кількість:</label><br>
+  <input type="text" id="quantity" readonly size="30"><br><br>
+
+  <label>Вартість за одиницю:</label><br>
+  <input type="text" id="cost" readonly size="30"><br><br>
+
+  <button onclick="showTotal()">Загальна сума</button><br><br>
+
+  <input type="text" id="total" readonly size="70">
+
+</body>
+</html>
+<h3>Завдання 7</h3>
+<script>
+  const product2 = ["Олівець", "Огірок", "Окуляри"];
+  const quantity2 = [100, 100, 70];
+  const cost2 = [5, 20, 450];
+
+  let currentIndex2 = -1;
+
+  function showProductInfo2() {
+    const select = document.getElementById("productSelect");
+    currentIndex2 = select.selectedIndex;
+
+    if (currentIndex2 !== -1) {
+      document.getElementById("quantity2").value = quantity2[currentIndex2];
+      document.getElementById("cost2").value = cost2[currentIndex2];
+      document.getElementById("total2").value = "";
+    } else {
+      document.getElementById("quantity2").value = "";
+      document.getElementById("cost2").value = "";
+      document.getElementById("total2").value = "";
+      currentIndex2 = -1;
+    }
+  }
+
+  function showTotal2() {
+    if (currentIndex2 !== -1) {
+      const total = quantity2[currentIndex2] * cost2[currentIndex2];
+      document.getElementById("total2").value =
+        `Загальна вартість товару "${product2[currentIndex2]}" = ${total.toFixed(2)} грн`;
+    }
+  }
+</script>
+
+<label for="productSelect">Виберіть товар:</label><br>
+<select id="productSelect">
+  <option>Олівець</option>
+  <option>Огірок</option>
+  <option>Окуляри</option>
+</select><br><br>
+
+<button onclick="showProductInfo2()">Наявна кількість і вартість</button><br><br>
+
+<label>Кількість:</label><br>
+<input type="text" id="quantity2" readonly size="30"><br><br>
+
+<label>Вартість за одиницю:</label><br>
+<input type="text" id="cost2" readonly size="30"><br><br>
+
+<button onclick="showTotal2()">Загальна сума</button><br><br>
+
+<input type="text" id="total2" readonly size="70">
+</body>
+</html>
