@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <title>Таблиця A[i][j]</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    td, th {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    input {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <a style="display: block; text-align: right" href="2k2l.html">На головну</a>
+  <h2>Генерація таблиці A[i][j] = 2i / 5j</h2>
+
+  <label>Кількість рядків:</label>
+  <input type="number" id="rows" min="1" value="3">
+  <label>Кількість стовпців:</label>
+  <input type="number" id="cols" min="1" value="3">
+  <button onclick="generateTable()">Створити таблицю</button>
+
+  <div id="tableContainer"></div>
+  <p id="sumOutput"></p>
+
+  <script>
+    function generateTable() {
+      const rows = parseInt(document.getElementById("rows").value);
+      const cols = parseInt(document.getElementById("cols").value);
+      let sum = 0;
+      let tableHTML = "<table>";
+
+      for (let i = 1; i <= rows; i++) {
+        tableHTML += "<tr>";
+        for (let j = 1; j <= cols; j++) {
+          const value = (2 * i) / (5 * j);
+          sum += value;
+          tableHTML += `<td>A[${i}][${j}] = ${(value).toFixed(2)}</td>`;
+        }
+        tableHTML += "</tr>";
+      }
+
+      tableHTML += "</table>";
+      document.getElementById("tableContainer").innerHTML = tableHTML;
+      document.getElementById("sumOutput").innerHTML =
+        `<strong>Сума всіх елементів A[i][j]:</strong> ${sum.toFixed(4)}`;
+    }
+  </script>
+
+</body>
+</html>

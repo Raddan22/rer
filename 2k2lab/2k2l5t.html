@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <a style="display: block; text-align: right" href="2k2l.html">На головну</a>
+    <h1>Завдання 5</h1>
+
+    <script>
+        
+        console.info("Це інформаційне повідомлення.");
+        console.warn("Це попередження!");
+        console.error("Це повідомлення про помилку!");    
+        let person = { name: "Sasha", age: 18, city: "IF" };
+        console.dir(person);
+        let xmlString = `<person><name>Sasha</name><age>18</age><city>IF</city></person>`;
+        console.dirxml(xmlString);
+        console.time("timer1");
+        for (let i = 0; i < 1000000; i++) { } 
+        console.timeEnd("timer1");
+        console.profile("Профілювання скрипта");
+        for (let i = 0; i < 1000000; i++) { } 
+        console.profileEnd();
+        let x = 5;
+        console.assert(x > 10, "Помилка! x має бути більше 10, але це не так.");
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <a style="display: block; text-align: right" href="2k3l.html">На головну</a>
+  <meta charset="UTF-8">
+  <title>Площа ромба</title>
+</head>
+<body>
+  <h2>Розрахунок площі ромба (варіант 6)</h2>
+
+  <label>Сторона a: 
+    <input type="number" id="a">
+  </label><br><br>
+
+  <label>Висота h: 
+    <input type="number" id="h">
+  </label><br><br>
+
+  <p>Площа ромба: <span id="result">0</span></p>
+
+  <script>
+    // посилання на DOM-елементи
+    const aInput = document.getElementById("a");
+    const hInput = document.getElementById("h");
+    const result = document.getElementById("result");
+
+    // функція обчислення площі
+    function calculateArea() {
+      const a = parseFloat(aInput.value) || 0;
+      const h = parseFloat(hInput.value) || 0;
+      const area = a * h;
+      result.textContent = area.toFixed(2);
+    }
+
+    // сигнал – зміна значення в полі
+    aInput.addEventListener("input", calculateArea);
+    hInput.addEventListener("input", calculateArea);
+  </script>
+</body>
+</html>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Екранна клавіатура</title>
+    <style>
+        #screenKeyboard button {
+            margin: 3px;
+            padding: 10px;
+            font-size: 18px;
+        }
+        #screenKeyboard {
+            margin-top: 10px;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            font-size: 18px;
+        }
+        #switchBtn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<textarea id="display" placeholder="Тут набирається текст..."></textarea><br>
+
+<div id="screenKeyboard"></div>
+
+
+<button id="switchBtn" onclick="switchLanguage()">(Alt+Shift)</button>
+
+<script>
+    
+    let language = "ua";
+
+    
+    const digits = ['0','1','2','3','4','5','6','7','8','9'];
+
+   
+    const letters_ua = ['а', 'б', 'в', 'г', 'ґ', 'д', 'е', 'є', 'ж', 'з', 'и', 'і', 'ї', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ь', 'ю', 'я'];
+    const letters_en = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+    function createKeyboard() {
+        let keysHTML = "";
+
+       
+        digits.forEach(digit => {
+            keysHTML += `<button onclick="addSymbol('${digit}')">${digit}</button>`;
+        });
+
+        keysHTML += "<br><br>";
+
+        let letters = language === "ua" ? letters_ua : letters_en;
+
+        
+        let row1 = letters.slice(0, 11);
+        let row2 = letters.slice(11, 22);
+        let row3 = letters.slice(22);
+
+        [row1, row2, row3].forEach(row => {
+            row.forEach(letter => {
+                keysHTML += `<button onclick="addSymbol('${letter}')">${letter}</button>`;
+            });
+            keysHTML += "<br>";
+        });
+
+        document.getElementById("screenKeyboard").innerHTML = keysHTML;
+    }
+
+   
+    function addSymbol(symbol) {
+        const display = document.getElementById('display');
+        display.value += symbol;
+        display.focus();
+    }
+
+    // Очищення textarea
+    function clean() {
+        document.getElementById('display').value = "";
+    }
+
+    // Перемикання мови між ua і en
+    function switchLanguage() {
+        language = language === "ua" ? "en" : "ua";
+        createKeyboard();
+    }
+
+    
+    window.addEventListener('keydown', function(event) {
+        if (event.altKey && event.shiftKey) {
+            event.preventDefault();  
+            switchLanguage();
+        }
+    });
+
+   
+    window.onload = createKeyboard;
+
+</script>

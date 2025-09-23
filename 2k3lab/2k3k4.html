@@ -1,0 +1,71 @@
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <a style="display: block; text-align: right" href="2k3l.html">На головну</a>
+    <meta charset="UTF-8">
+    <title>Перегляд зображень</title>
+    <style>
+        #imageContainer {
+            width: 500px;
+            height: 350px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        #imageContainer img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="imageContainer">
+    <img id="sliderImage" src="" alt="Зображення">
+</div>
+
+<button onclick="prevImage()">Назад</button>
+<button onclick="nextImage()">Вперед</button>
+
+<script>
+    
+    let images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg'];
+
+    
+    let currentIndex = 0;
+
+    
+    const sliderImage = document.getElementById('sliderImage');
+
+  
+    function showImage() {
+        sliderImage.src = images[currentIndex];
+    }
+
+    
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage();
+    }
+
+    // Перейти до попереднього зображення (з циклічністю)
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage();
+    }
+
+   
+    window.onload = showImage;
+
+</script>
+
+</body>
+</html>

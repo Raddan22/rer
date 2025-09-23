@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <a style="display: block; text-align: right" href="2k3l.html">На головну</a>
+  <meta charset="UTF-8">
+  <style>
+    ul {
+      list-style-type: none; 
+      padding-left: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+    a {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div id="tree"></div>
+
+  <script>
+   
+    const data = {
+      "fruits": ["apple", "pineapple", "appricot", "pear", "lemon"],
+      "vegetables": ["potatoes", "beetroot", "carrots", "pear"]
+    };
+
+
+    function createTree(container, obj) {
+      let ul = document.createElement("ul");
+
+      for (let key in obj) {
+        let li = document.createElement("li");
+
+       
+        let link = document.createElement("a");
+        link.textContent = key;
+        link.addEventListener("click", function () {
+          sublist.classList.toggle("hidden");
+        });
+
+        li.appendChild(link);
+
+       
+        let sublist = document.createElement("ul");
+        obj[key].forEach(item => {
+          let subli = document.createElement("li");
+          subli.textContent = item;
+          sublist.appendChild(subli);
+        });
+
+        li.appendChild(sublist);
+        ul.appendChild(li);
+      }
+
+      container.appendChild(ul);
+    }
+
+    
+    const container = document.getElementById("tree");
+    createTree(container, data);
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <h1>Завдання 1</h1>
+<head>
+  <meta charset="utf-8">
+  <title>Годинник</title>
+  <a style="display: block; text-align: right" href="2k2l.html">На головну</a>
+</head>
+<body onload="clock()">
+  <form name="clockForm">
+    <label>Час і дата:</label>
+    <input type="text" name="datetime" size="25" readonly>
+  </form>
+
+  <script>
+    function clock() {
+      const now =new Date();
+
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      const year = now.getFullYear();
+      const month = (now.getMonth() + 1).toString().padStart(2, '0');
+      const day = now.getDate().toString().padStart(2, '0');
+
+      const dateTimeStr = `${hours}:${minutes}:${seconds}-${year}:${month}:${day}`;
+
+      document.clockForm.datetime.value = dateTimeStr;
+
+      setTimeout(clock, 1000); 
+    }
+  </script>
+</body>
+<head>
+  <meta charset="utf-8">
+  <title>Калькулятор</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input[type="text"] {
+      width: 200px;
+      height: 30px;
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-align: right;
+      padding-right: 10px;
+    }
+    .button {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Калькулятор</h2>
+  <input type="text" id="output" readonly><br>
+
+  <!-- Рядки кнопок -->
+  <div>
+    <button class="button" onclick="append('7')">7</button>
+    <button class="button" onclick="append('8')">8</button>
+    <button class="button" onclick="append('9')">9</button>
+    <button class="button" onclick="append('/')">/</button>
+  </div>
+  <div>
+    <button class="button" onclick="append('4')">4</button>
+    <button class="button" onclick="append('5')">5</button>
+    <button class="button" onclick="append('6')">6</button>
+    <button class="button" onclick="append('*')">*</button>
+  </div>
+  <div>
+    <button class="button" onclick="append('1')">1</button>
+    <button class="button" onclick="append('2')">2</button>
+    <button class="button" onclick="append('3')">3</button>
+    <button class="button" onclick="append('-')">-</button>
+  </div>
+  <div>
+    <button class="button" onclick="append('0')">0</button>
+    <button class="button" onclick="append('.')">.</button>
+    <button class="button" onclick="calculate()">=</button>
+    <button class="button" onclick="append('+')">+</button>
+  </div>
+  <div>
+    <button class="button" onclick="clearOutput()">C</button>
+  </div>
+
+  <script>
+    function append(value) {
+      document.getElementById("output").value += value;
+    }
+
+    function clearOutput() {
+      document.getElementById("output").value = '';
+    }
+
+    function calculate() {
+      try {
+        const result = eval(document.getElementById("output").value);
+        document.getElementById("output").value = result;
+      } catch (e) {
+        document.getElementById("output").value = "Помилка";
+      }
+    }
+  </script>
+
+</body>
+
+

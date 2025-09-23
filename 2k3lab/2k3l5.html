@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <a style="display: block; text-align: right" href="2k3l.html">На головну</a>
+</head>
+<body>
+  <h2>Перевір свої знання з математики</h2>
+  
+  <p id="score">Рахунок: 0 правильних з 0</p>
+  
+  <p id="task">Завдання буде тут</p>
+  
+  <input type="number" id="answer" placeholder="Введіть відповідь">
+  <button id="checkBtn">Перевірити</button>
+  <button id="nextBtn">Наступне завдання</button>
+  
+  <p id="feedback"></p>
+
+  <script>
+    let correctCount = 0;
+    let totalCount = 0;
+    let correctAnswer = 0;
+    let maxTasks = 5;
+
+    const score = document.getElementById("score");
+    const task = document.getElementById("task");
+    const answer = document.getElementById("answer");
+    const feedback = document.getElementById("feedback");
+    const checkBtn = document.getElementById("checkBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+   
+    function generateTask() {
+      const a = Math.floor(Math.random() * 10);
+      const b = Math.floor(Math.random() * 10);
+      const ops = ["+", "-", "*", "/"];
+      const op = ops[Math.floor(Math.random() * ops.length)];
+
+      
+      switch (op) {
+        case "+": correctAnswer = a + b; break;
+        case "-": correctAnswer = a - b; break;
+        case "*": correctAnswer = a * b; break;
+        case "/":
+          // уникнути ділення на 0
+          correctAnswer = b !== 0 ? (a / b) : 0;
+          break;
+      }
+
+      task.textContent = `${a} ${op} ${b} = ?`;
+      answer.value = "";
+      feedback.textContent = "";
+    }
+
+    checkBtn.addEventListener("click", () => {
+      if (totalCount >= maxTasks) return;
+
+      const userAnswer = parseFloat(answer.value);
+
+      if (isNaN(userAnswer)) {
+        feedback.textContent = "Введіть число!";
+        return;
+      }
+
+      if (Math.abs(userAnswer - correctAnswer) < 0.0001) {
+        feedback.textContent = "Правильно!";
+        correctCount++;
+      } else {
+        feedback.textContent = `Помилка, правильна відповідь «${correctAnswer}»`;
+      }
+
+      totalCount++;
+      score.textContent = `Рахунок: ${correctCount} правильних з ${totalCount}`;
+
+      if (totalCount === maxTasks) {
+        const percent = Math.round((correctCount / maxTasks) * 100);
+        score.textContent += ` — Загальний результат: ${percent}%`;
+      }
+    });
+
+ 
+    nextBtn.addEventListener("click", () => {
+      if (totalCount < maxTasks) {
+        generateTask();
+      } else {
+        feedback.textContent = "Тест завершено!";
+      }
+    });
+
+   
+    generateTask();
+  </script>
+</body>
+</html>
