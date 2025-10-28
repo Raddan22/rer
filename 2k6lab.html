@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Перевірка форми</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #eef2f3;
+    padding: 20px;
+  }
+
+  form {
+    width: 320px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px gray;
+  }
+
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  input {
+    width: 100%;
+    padding: 6px;
+    margin-top: 5px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  span {
+    font-size: 12px;
+    color: red;
+    display: none;
+  }
+  button {
+    margin-top: 15px;
+    padding: 8px 12px;
+    border: none;
+    background-color: #004702;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h2>Форма перевірки даних</h2>
+
+<form id="myForm">
+  <label for="email">E-mail:</label>
+  <input type="text" id="email" placeholder="example@pnu.edu.ua">
+  <span id="emailError">E-mail повинен закінчуватись на @pnu.edu.ua</span>
+
+  <label for="name">Ім’я та прізвище:</label>
+  <input type="text" id="name" placeholder="Іван ФРАНКО">
+  <span id="nameError">Формат: Ім’я (перша велика), Прізвище (всі великі)</span>
+
+  <label for="login">Логін:</label>
+  <input type="text" id="login" placeholder="ivan123">
+  <span id="loginError">Логін повинен містити лише латинські літери</span>
+
+  <label for="password">Пароль:</label>
+  <input type="password" id="password" placeholder="********">
+  <span id="passwordError">Мінімум 8 символів: літера, цифра і спецсимвол (_-!@#$%^&*)</span>
+
+  <label for="index">Поштовий індекс:</label>
+  <input type="text" id="index" placeholder="76000">
+  <span id="indexError">Індекс повинен складатись з 5 цифр</span>
+
+  <button type="button" onclick="validateForm()">Перевірити</button>
+</form>
+
+<script>
+function validateForm() {
+  
+  let email = document.getElementById("email");
+  let name = document.getElementById("name");
+  let login = document.getElementById("login");
+  let password = document.getElementById("password");
+  let index = document.getElementById("index");
+
+  
+  let emailPattern = /^[a-z0-9._%+-]+@pnu\.edu\.ua$/i;
+  let namePattern = /^[A-ZА-ЯІЇЄ][a-zа-яіїє]+ [A-ZА-ЯІЇЄ]+$/;
+  let loginPattern = /^[a-zA-Z]+$/;
+  let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[_\-!@#$%^&*])[A-Za-z\d_\-!@#$%^&*]{8,}$/;
+  let indexPattern = /^\d{5}$/;
+
+  
+  checkField(email, emailPattern, "emailError");
+  checkField(name, namePattern, "nameError");
+  checkField(login, loginPattern, "loginError");
+  checkField(password, passwordPattern, "passwordError");
+  checkField(index, indexPattern, "indexError");
+}
+
+function checkField(field, pattern, errorId) {
+  let error = document.getElementById(errorId);
+  if (pattern.test(field.value)) {
+    field.classList.remove("invalid");
+    field.classList.add("valid");
+    error.style.display = "none";
+  } else {
+    field.classList.remove("valid");
+    field.classList.add("invalid");
+    error.style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
