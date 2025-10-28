@@ -78,6 +78,16 @@
 </form>
 
 <script>
+  document.writeln("<h2>Завдання 1.</h2>");
+
+    let s = "oleksandrdub1233@gmail.com";
+    let r = /^([a-z0-9]+)(\.[a-z0-9]+)*@([a-z0-9]+)(\.[a-z0-9]+)*$/i;
+    let a = s.match(r);
+    for (i = 0; i < a.length; i++){
+        document.writeln("<hr> a[" + i + "] " + a[i]);
+    }
+
+
 function validateForm() {
   
   let email = document.getElementById("email");
@@ -117,3 +127,4 @@ function checkField(field, pattern, errorId) {
 
 </body>
 </html>
+
