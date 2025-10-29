@@ -16,7 +16,7 @@ function task1() {
   let s = document.getElementById("str1").value;
   document.getElementById("res1").innerHTML = "Довжина: " + s.length;
 }
-</script>
+
 
 <hr>
 
@@ -25,13 +25,13 @@ function task1() {
 <button onclick="task2()">Результат</button>
 <p id="res2"></p>
 
-<script>
+
 function task2() {
   let s = document.getElementById("str2").value;
   document.getElementById("res2").innerHTML =
     "Верхній регістр: " + s.toUpperCase() + "<br>Нижній регістр: " + s.toLowerCase();
 }
-</script>
+
 
 <hr>
 
@@ -41,14 +41,14 @@ function task2() {
 <button onclick="task3()">Результат</button>
 <p id="res3"></p>
 
-<script>
+
 function task3() {
   let s = document.getElementById("str3").value;
   let ch = document.getElementById("ch3").value;
   let i = s.indexOf(ch);
   document.getElementById("res3").innerHTML = "Індекс: " + i;
 }
-</script>
+
 
 <hr>
 
@@ -68,7 +68,7 @@ function task4() {
   }
   document.getElementById("res4").innerHTML = "Кількість входжень: " + count;
 }
-</script>
+
 
 <hr>
 
@@ -77,7 +77,7 @@ function task4() {
 <button onclick="task5()">Результат</button>
 <p id="res5"></p>
 
-<script>
+
 function task5() {
   let s = document.getElementById("str5").value;
   let res = "";
@@ -87,7 +87,6 @@ function task5() {
   }
   document.getElementById("res5").innerHTML = "Результат: " + res;
 }
-</script>
 
 <hr>
 
@@ -96,17 +95,17 @@ function task5() {
 <button onclick="task6()">Результат</button>
 <p id="res6"></p>
 
-<script>
+
 function task6() {
   let s = document.getElementById("str6").value.toLowerCase();
   if (s.includes("100% безкоштовно") || s.includes("збільшення продажів") ||
       s.includes("тільки сьогодні") || s.includes("не видаляйте")) {
-    document.getElementById("res6").innerHTML = "Є спам 😡";
+    document.getElementById("res6").innerHTML = "Є спам";
   } else {
-    document.getElementById("res6").innerHTML = "Немає спаму 😊";
+    document.getElementById("res6").innerHTML = "Немає спаму";
   }
 }
-</script>
+
 
 <hr>
 
@@ -125,7 +124,7 @@ function task7() {
   }
   document.getElementById("res7").innerHTML = "Результат: " + s;
 }
-</script>
+
 
 <hr>
 
@@ -134,13 +133,12 @@ function task7() {
 <button onclick="task8()">Результат</button>
 <p id="res8"></p>
 
-<script>
 function task8() {
   let s = document.getElementById("str8").value.toLowerCase().replace(/\s/g, "");
   let reversed = s.split("").reverse().join("");
   document.getElementById("res8").innerHTML = (s === reversed);
 }
-</script>
+
 
 <hr>
 
@@ -151,7 +149,7 @@ function task8() {
 <button onclick="task9()">Результат</button>
 <p id="res9"></p>
 
-<script>
+
 function task9() {
   let s = document.getElementById("str9").value;
   let oldC = document.getElementById("old9").value;
@@ -162,7 +160,7 @@ function task9() {
   }
   document.getElementById("res9").innerHTML = "Результат: " + s;
 }
-</script>
+
 
 <hr>
 
@@ -171,7 +169,7 @@ function task9() {
 <button onclick="task10()">Результат</button>
 <p id="res10"></p>
 
-<script>
+
 function task10() {
   let text = document.getElementById("str10").value;
   let maxCount = 1;
@@ -199,3 +197,4 @@ function task10() {
 
 </body>
 </html>
+
