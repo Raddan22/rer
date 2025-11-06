@@ -11,27 +11,12 @@
 <button onclick="task1()">Результат</button>
 <p id="res1"></p>
 
-<script>
-function task1() {
-  let s = document.getElementById("str1").value;
-  document.getElementById("res1").innerHTML = "Довжина: " + s.length;
-}
-
-
 <hr>
 
 <h2>Завдання 2. Верхній та нижній регістр</h2>
 <input type="text" id="str2" placeholder="Введіть рядок">
 <button onclick="task2()">Результат</button>
 <p id="res2"></p>
-
-
-function task2() {
-  let s = document.getElementById("str2").value;
-  document.getElementById("res2").innerHTML =
-    "Верхній регістр: " + s.toUpperCase() + "<br>Нижній регістр: " + s.toLowerCase();
-}
-
 
 <hr>
 
@@ -41,15 +26,6 @@ function task2() {
 <button onclick="task3()">Результат</button>
 <p id="res3"></p>
 
-
-function task3() {
-  let s = document.getElementById("str3").value;
-  let ch = document.getElementById("ch3").value;
-  let i = s.indexOf(ch);
-  document.getElementById("res3").innerHTML = "Індекс: " + i;
-}
-
-
 <hr>
 
 <h2>Завдання 4. Кількість входжень символу</h2>
@@ -58,18 +34,6 @@ function task3() {
 <button onclick="task4()">Результат</button>
 <p id="res4"></p>
 
-<script>
-function task4() {
-  let s = document.getElementById("str4").value;
-  let ch = document.getElementById("ch4").value;
-  let count = 0;
-  for (let i = 0; i < s.length; i++) {
-    if (s[i] === ch) count++;
-  }
-  document.getElementById("res4").innerHTML = "Кількість входжень: " + count;
-}
-
-
 <hr>
 
 <h2>Завдання 5. Поміняти місцями сусідні символи</h2>
@@ -77,6 +41,72 @@ function task4() {
 <button onclick="task5()">Результат</button>
 <p id="res5"></p>
 
+<hr>
+
+<h2>Завдання 6. Перевірка на спам</h2>
+<input type="text" id="str6" placeholder="Введіть текст">
+<button onclick="task6()">Результат</button>
+<p id="res6"></p>
+
+<hr>
+
+<h2>Завдання 7. Скорочення рядка</h2>
+<input type="text" id="str7" placeholder="Введіть рядок">
+<input type="number" id="len7" placeholder="Максимальна довжина">
+<button onclick="task7()">Результат</button>
+<p id="res7"></p>
+
+<hr>
+
+<h2>Завдання 8. Перевірка паліндрому</h2>
+<input type="text" id="str8" placeholder="Введіть рядок">
+<button onclick="task8()">Результат</button>
+<p id="res8"></p>
+
+<hr>
+
+<h2>Завдання 9. Замінити перше входження символу</h2>
+<input type="text" id="str9" placeholder="Введіть рядок">
+<input type="text" id="old9" placeholder="Старий символ">
+<input type="text" id="new9" placeholder="Новий символ">
+<button onclick="task9()">Результат</button>
+<p id="res9"></p>
+
+<hr>
+
+<h2>Завдання 10. Найдовший повторюваний підрядок</h2>
+<input type="text" id="str10" placeholder="Введіть рядок">
+<button onclick="task10()">Результат</button>
+<p id="res10"></p>
+
+<!-- Усі функції в одному script -->
+<script>
+function task1() {
+  let s = document.getElementById("str1").value;
+  document.getElementById("res1").innerHTML = "Довжина: " + s.length;
+}
+
+function task2() {
+  let s = document.getElementById("str2").value;
+  document.getElementById("res2").innerHTML =
+    "Верхній регістр: " + s.toUpperCase() +
+    "<br>Нижній регістр: " + s.toLowerCase();
+}
+
+function task3() {
+  let s = document.getElementById("str3").value;
+  let ch = document.getElementById("ch3").value;
+  let i = s.indexOf(ch);
+  document.getElementById("res3").innerHTML = "Індекс: " + i;
+}
+
+function task4() {
+  let s = document.getElementById("str4").value;
+  let ch = document.getElementById("ch4").value;
+  let count = 0;
+  for (let i = 0; i < s.length; i++) if (s[i] === ch) count++;
+  document.getElementById("res4").innerHTML = "Кількість входжень: " + count;
+}
 
 function task5() {
   let s = document.getElementById("str5").value;
@@ -88,14 +118,6 @@ function task5() {
   document.getElementById("res5").innerHTML = "Результат: " + res;
 }
 
-<hr>
-
-<h2>Завдання 6. Перевірка на спам</h2>
-<input type="text" id="str6" placeholder="Введіть текст">
-<button onclick="task6()">Результат</button>
-<p id="res6"></p>
-
-
 function task6() {
   let s = document.getElementById("str6").value.toLowerCase();
   if (s.includes("100% безкоштовно") || s.includes("збільшення продажів") ||
@@ -106,95 +128,43 @@ function task6() {
   }
 }
 
-
-<hr>
-
-<h2>Завдання 7. Скорочення рядка</h2>
-<input type="text" id="str7" placeholder="Введіть рядок">
-<input type="number" id="len7" placeholder="Максимальна довжина">
-<button onclick="task7()">Результат</button>
-<p id="res7"></p>
-
-<script>
 function task7() {
   let s = document.getElementById("str7").value;
   let max = Number(document.getElementById("len7").value);
-  if (s.length > max) {
-    s = s.slice(0, max - 3) + "...";
-  }
+  if (s.length > max) s = s.slice(0, max - 3) + "...";
   document.getElementById("res7").innerHTML = "Результат: " + s;
 }
-
-
-<hr>
-
-<h2>Завдання 8. Перевірка паліндрому</h2>
-<input type="text" id="str8" placeholder="Введіть рядок">
-<button onclick="task8()">Результат</button>
-<p id="res8"></p>
 
 function task8() {
   let s = document.getElementById("str8").value.toLowerCase().replace(/\s/g, "");
   let reversed = s.split("").reverse().join("");
-  document.getElementById("res8").innerHTML = (s === reversed);
+  document.getElementById("res8").innerHTML = s === reversed ? "Паліндром" : "Не паліндром";
 }
-
-
-<hr>
-
-<h2>Завдання 9. Замінити перше входження символу</h2>
-<input type="text" id="str9" placeholder="Введіть рядок">
-<input type="text" id="old9" placeholder="Старий символ">
-<input type="text" id="new9" placeholder="Новий символ">
-<button onclick="task9()">Результат</button>
-<p id="res9"></p>
-
 
 function task9() {
   let s = document.getElementById("str9").value;
   let oldC = document.getElementById("old9").value;
   let newC = document.getElementById("new9").value;
   let i = s.indexOf(oldC);
-  if (i !== -1) {
-    s = s.substring(0, i) + newC + s.substring(i + 1);
-  }
+  if (i !== -1) s = s.substring(0, i) + newC + s.substring(i + 1);
   document.getElementById("res9").innerHTML = "Результат: " + s;
 }
 
-
-<hr>
-
-<h2>Завдання 10. Найдовший повторюваний підрядок</h2>
-<input type="text" id="str10" placeholder="Введіть рядок">
-<button onclick="task10()">Результат</button>
-<p id="res10"></p>
-
-
 function task10() {
   let text = document.getElementById("str10").value;
-  let maxCount = 1;
-  let count = 1;
-  let maxChar = text[0];
-
+  if (text.length === 0) {
+    document.getElementById("res10").innerHTML = "Порожній рядок!";
+    return;
+  }
+  let maxCount = 1, count = 1, maxChar = text[0];
   for (let i = 1; i < text.length; i++) {
     if (text[i] === text[i - 1]) count++;
     else count = 1;
-
-    if (count > maxCount) {
-      maxCount = count;
-      maxChar = text[i];
-    }
+    if (count > maxCount) { maxCount = count; maxChar = text[i]; }
   }
-
-  let result = "";
-  for (let i = 0; i < maxCount; i++) {
-    result += maxChar;
-  }
-
-  document.getElementById("res10").innerHTML = "Найдовший повтор: " + result;
+  document.getElementById("res10").innerHTML = "Найдовший повтор: " + maxChar.repeat(maxCount);
 }
 </script>
 
 </body>
 </html>
-
