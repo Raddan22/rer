@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Інженерія Програмного Забезпечення</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #12171f, #1a1f28);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #ccc;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      letter-spacing: 3px;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    button {
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #009bb2;
+    }
+
+    .cube {
+      width: 50px;
+      height: 50px;
+      background-color: #00ff87;
+      position: absolute;
+      left: 0;
+      bottom: 50px;
+      border-radius: 4px;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); background-color: #00ff87; }
+      50% { transform: scale(1.3); background-color: #0cfda0; }
+    }
+
+    .ball {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #ff0033;
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 15px);
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">Інженерія<br>Програмного<br>Забезпечення</h1>
+  <button id="toggle">Запустити / Зупинити</button>
+
+  <script>
+    const toggleButton = document.getElementById('toggle');
+    const title = document.getElementById('title');
+    let running = false;
+
+    // Створюємо куб
+    const cube = document.createElement('div');
+    cube.classList.add('cube');
+    document.body.appendChild(cube);
+
+    // Червона кулька
+    let ball = null;
+
+    // Анімація куба
+    let cubeStart = null;
+    function animateCube(timestamp) {
+      if (!cubeStart) cubeStart = timestamp;
+      const progress = timestamp - cubeStart;
+
+      // Рух праворуч
+      cube.style.left = Math.min(progress / 5, window.innerWidth - 60) + 'px';
+      // Підстрибує
+      cube.style.bottom = 50 + Math.sin(progress / 200) * 50 + 'px';
+
+      if (running) requestAnimationFrame(animateCube);
+    }
+
+    // Анімація кульки
+    function createBall() {
+      ball = document.createElement('div');
+      ball.classList.add('ball');
+      document.body.appendChild(ball);
+
+      let startBall = null;
+      function moveBall(timestamp) {
+        if (!startBall) startBall = timestamp;
+        const t = (timestamp - startBall) / 1000; // секунди
+
+        // Вертикальний рух кульки
+        const height = -300 * Math.sin(Math.min(t, 1) * Math.PI);
+        ball.style.bottom = 50 + height + 'px';
+
+        if (running) requestAnimationFrame(moveBall);
+      }
+
+      requestAnimationFrame(moveBall);
+    }
+
+    function removeBall() {
+      if (ball) {
+        document.body.removeChild(ball);
+        ball = null;
+      }
+    }
+
+    // Кнопка запуск/зупинка
+    toggleButton.addEventListener('click', () => {
+      running = !running;
+
+      if (running) {
+        title.style.opacity = '1';
+        title.style.transform = 'scale(1)';
+        cubeStart = null;
+        requestAnimationFrame(animateCube);
+        createBall();
+      } else {
+        title.style.opacity = '0';
+        title.style.transform = 'scale(0.9)';
+        removeBall();
+      }
+    });
+  </script>
+</body>
+</html>
