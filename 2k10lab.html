@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота з jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .highlight {
+            background-color: yellow;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        
+        .border-highlight {
+            border: 2px solid red;
+            background-color: #ffe6e6;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .image-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+            display: none;
+        }
+        
+        form {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        input[type="text"] {
+            padding: 8px;
+            margin: 5px 0;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        input[type="submit"] {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        .success {
+            color: green;
+        }
+        
+        .error {
+            color: red;
+        }
+        
+        .hover-div {
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .hover-effect {
+            background-color: #f0f8ff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .click-effect {
+            border: 3px solid #4CAF50;
+            background-color: #e8f5e9;
+        }
+        
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #007B9A;
+        }
+    </style>
+</head>
+<body>
+    <h1>Лабораторна робота з jQuery</h1>
+    
+    <!-- Завдання 1 -->
+    <section>
+        <h2>Завдання 1: Основи jQuery</h2>
+        <p>При оновленні сторінки ви побачите сповіщення про готовність jQuery</p>
+        
+        <h3>Прихований текст</h3>
+        <a href="#" class="button">Натисніть, щоб показати текст</a>
+        <div id="hide_text">Демонстраційний прихований текст</div>
+    </section>
+    
+    <!-- Завдання 2 -->
+    <section>
+        <h2>Завдання 2: Маніпуляції з DOM</h2>
+        <p>Перший абзац</p>
+        <p>Другий абзац</p>
+        <p>Третій абзац</p>
+        
+        <h3>Ефект наведення миші</h3>
+        <div class="hover-div">Наведіть на мене мишку</div>
+        <div class="hover-div">Цей блок також реагує на наведення</div>
+    </section>
+    
+    <!-- Завдання 3 -->
+    <section>
+        <h2>Завдання 3: Обробка подій</h2>
+        
+        <h3>Одинарний та подвійний клік</h3>
+        <div id="clickable-div">Клікніть або двічі клікніть на мене</div>
+        
+        <h3>Кнопки з одинарним та подвійним кліком</h3>
+        <button id="single-click-btn">Одинарний клік</button>
+        <button id="double-click-btn">Подвійний клік</button>
+        
+        <h3>Зображення з підказкою</h3>
+        <a href="#" id="show-image-link">Показати зображення</a>
+        <div class="image-container" id="image-container" style="display: none;">
+            <img src="https://i.pinimg.com/736x/44/be/15/44be1539a732d487ff84cceb5ec6eefd.jpg" alt="Зразкове зображення">
+        </div>
+        
+        <h3>Форма перевірки</h3>
+        <p>Введіть в текстове поле слово 'correct'.</p>
+        <form id="validation-form">
+            <div>
+                <input type="text" id="text-input" />
+                <input type="submit" value="Перевірити" />
+            </div>
+        </form>
+        <span id="validation-result"></span>
+    </section>
+
+    <script>
+        $(document).ready(function() {
+            // Завдання 1
+            alert("Бібліотека jQuery готова до роботи!");
+            
+            var $text = $('#hide_text');
+            $text.hide();
+            
+            $('.button').click(function() {
+                $text.show(200);
+            });
+            
+            // Завдання 2
+            $("p:first").text("DOM first!");
+            $("p:last").text("DOM last!");
+            
+            $('.hover-div').hover(
+                function() {
+                    $(this).addClass('hover-effect');
+                },
+                function() {
+                    $(this).removeClass('hover-effect');
+                }
+            );
+            
+            // Завдання 3
+            $('#clickable-div').bind({
+                click: function() {
+                    $(this).addClass('click-effect');
+                },
+                dblclick: function() {
+                    $(this).removeClass('click-effect');
+                }
+            });
+            
+            $('#single-click-btn').click(function() {
+                alert("Одинарний клік");
+            });
+            
+            $('#double-click-btn').dblclick(function() {
+                alert("Подвійний клік");
+            });
+            
+            $('#show-image-link').click(function(e) {
+                e.preventDefault();
+                $('#image-container').show();
+            });
+            
+            $('.image-container img').click(function() {
+                $(this).parent().hide();
+            });
+            
+            $('.image-container img').hover(
+                function() {
+                    $('<div class="tooltip">Підпис до зображення</div>')
+                        .appendTo('body')
+                        .css({
+                            top: $(this).offset().top - 30,
+                            left: $(this).offset().left
+                        })
+                        .fadeIn();
+                },
+                function() {
+                    $('.tooltip').remove();
+                }
+            );
+            
+            $("form").submit(function() {
+                if ($("input:first").val() == "correct") {
+                    $("#validation-result").text("Успішно!").removeClass('error').addClass('success').show();
+                    return true;
+                }
+                $("#validation-result").text("Неправильно!").removeClass('success').addClass('error').show().fadeOut(1000);
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
