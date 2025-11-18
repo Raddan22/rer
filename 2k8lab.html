@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    h1, h2, h3 {
+      color: #333;
+    }
+
+    section {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      margin-top: 5px;
+      padding: 6px 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input {
+      padding: 5px;
+      margin: 5px 0;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+    }
+
+    .output {
+      background: #f9f9f9;
+      padding: 8px;
+      margin-top: 8px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Лабораторна робота з JavaScript</h1>
+
+  <!-- ======== Завдання 1 ======== -->
+  <section>
+    <h2>Завдання 1: Об'єкт часу</h2>
+    <button onclick="showCurrentTime()">Показати поточний час</button>
+    <div id="timeOutput" class="output"></div>
+
+    <div style="margin-top:10px;">
+      <label>Додати секунд:</label>
+      <input type="number" id="secondsInput" placeholder="Введіть секунди">
+      <button onclick="addSeconds()">Додати</button>
+      <div id="updatedTimeOutput" class="output"></div>
+    </div>
+  </section>
+
+  <!-- ======== Завдання 2 ======== -->
+  <section>
+    <h2>Завдання 2: Дата та година</h2>
+    <button onclick="showCurrentDate()">Виконати (2.1)</button>
+    <div id="dateOutput" class="output"></div>
+
+    <h3>2.2 Останній день місяця</h3>
+    <input type="number" id="yearInput" placeholder="Рік">
+    <input type="number" id="monthInput" placeholder="Місяць">
+    <button onclick="showLastDay()">Показати</button>
+    <div id="lastDayOutput" class="output"></div>
+
+    <h3>2.3 Секунди від початку/до кінця дня</h3>
+    <button onclick="showSecondsInfo()">Показати</button>
+    <div id="secondsInfoOutput" class="output"></div>
+  </section>
+
+  <!-- ======== Завдання 3–5 ======== -->
+  <section>
+    <h2>Завдання 3–5: Класи</h2>
+    <button onclick="runCarExample()">Запустити приклад</button>
+    <div id="carOutput" class="output"></div>
+  </section>
+
+  <!-- ======== Завдання 6 ======== -->
+  <section>
+    <h2>Завдання 6: User & Admin</h2>
+    <label>Ім'я користувача:</label><br>
+    <input type="text" id="username"><br>
+    <label>Email:</label><br>
+    <input type="email" id="email"><br>
+    <label>Роль:</label><br>
+    <input type="text" id="role" placeholder="user / admin"><br>
+
+    <button onclick="showUserInfo()">Показати інформацію</button>
+    <button onclick="clearFields()">Очистити</button>
+    <div id="userOutput" class="output"></div>
+  </section>
+
+  <script>
+    // ==================== Завдання 1 ====================
+    let time = { hours: 0, minutes: 0, seconds: 0 };
+
+    function showCurrentTime() {
+      const now = new Date();
+      time.hours = now.getHours();
+      time.minutes = now.getMinutes();
+      time.seconds = now.getSeconds();
+      const formatted = `${time.hours.toString().padStart(2, '0')}:${time.minutes.toString().padStart(2, '0')}:${time.seconds.toString().padStart(2, '0')}`;
+      document.getElementById('timeOutput').innerText = `Поточний час: ${formatted}`;
+    }
+
+    function addSeconds() {
+      const addSec = parseInt(document.getElementById('secondsInput').value);
+      if (isNaN(addSec)) return;
+      let totalSec = time.hours * 3600 + time.minutes * 60 + time.seconds + addSec;
+      totalSec = ((totalSec % 86400) + 86400) % 86400;
+      time.hours = Math.floor(totalSec / 3600);
+      time.minutes = Math.floor((totalSec % 3600) / 60);
+      time.seconds = totalSec % 60;
+      const formatted = `${time.hours.toString().padStart(2, '0')}:${time.minutes.toString().padStart(2, '0')}:${time.seconds.toString().padStart(2, '0')}`;
+      document.getElementById('updatedTimeOutput').innerText = `Оновлений час: ${formatted}`;
+    }
+
+    // ==================== Завдання 2 ====================
+    function showCurrentDate() {
+      const now = new Date();
+      const days = ['неділя', 'понеділок', 'вівторок', 'середа', 'четвер', "п'ятниця", 'субота'];
+      const months = ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня', 'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'];
+      document.getElementById('dateOutput').innerText =
+        `Дата: ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()} року\nДень тижня: ${days[now.getDay()]}\nЧас: ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+    }
+
+    function showLastDay() {
+      const year = parseInt(document.getElementById('yearInput').value);
+      const month = parseInt(document.getElementById('monthInput').value);
+      if (isNaN(year) || isNaN(month) || month < 1 || month > 12) {
+        document.getElementById('lastDayOutput').innerText = "Некоректні дані!";
+        return;
+      }
+      const lastDay = new Date(year, month, 0).getDate();
+      document.getElementById('lastDayOutput').innerText = `Останній день ${month}-го місяця ${year} року: ${lastDay}`;
+    }
+
+    function showSecondsInfo() {
+      const now = new Date();
+      const secondsPassed = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+      const secondsToNextDay = 86400 - secondsPassed;
+      document.getElementById('secondsInfoOutput').innerText =
+        `Секунд від початку дня: ${secondsPassed}\nСекунд до початку наступного дня: ${secondsToNextDay}`;
+    }
+
+    // ==================== Завдання 3–5 ====================
+    class Car {
+      constructor(brand, model, year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+      }
+      info() {
+        return `Авто: ${this.brand} ${this.model}, ${this.year} року.`;
+      }
+    }
+
+    class ElectricCar extends Car {
+      constructor(brand, model, year, battery) {
+        super(brand, model, year);
+        this.battery = battery;
+      }
+      charge() {
+        return `${this.brand} ${this.model} заряджається... Батарея: ${this.battery} kWh.`;
+      }
+    }
+
+    class MathHelper {
+      static add(a, b) {
+        return a + b;
+      }
+    }
+
+    function runCarExample() {
+      const car1 = new Car("Toyota", "Camry", 2020);
+      const tesla = new ElectricCar("Tesla", "Model 3", 2022, 75);
+      document.getElementById('carOutput').innerText =
+        `${car1.info()}\n${tesla.info()}\n${tesla.charge()}\nСума (5 + 7) = ${MathHelper.add(5, 7)}`;
+    }
+
+    // ==================== Завдання 6 ====================
+    class User {
+      constructor(username, email, role) {
+        this.username = username;
+        this.email = email;
+        this.role = role;
+      }
+      showInfo() {
+        return `Користувач: ${this.username}\nEmail: ${this.email}\nРоль: ${this.role}`;
+      }
+    }
+
+    class Admin extends User {
+      constructor(username, email) {
+        super(username, email, "admin");
+      }
+      banUser(user) {
+        return `Адмін ${this.username} забанив користувача ${user.username}.`;
+      }
+    }
+
+    function showUserInfo() {
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const role = document.getElementById('role').value;
+      if (!username || !email || !role) {
+        document.getElementById('userOutput').innerText = "Заповніть всі поля!";
+        return;
+      }
+      const user = new User(username, email, role);
+      const admin = new Admin("SuperAdmin", "admin@example.com");
+      document.getElementById('userOutput').innerText = `${user.showInfo()}\n\n${admin.banUser(user)}`;
+    }
+
+    function clearFields() {
+      document.getElementById('username').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('role').value = '';
+      document.getElementById('userOutput').innerText = '';
+    }
+  </script>
+</body>
+</html>
