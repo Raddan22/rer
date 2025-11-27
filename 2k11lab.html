@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота - jQuery методи</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .task-section {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid #007bff;
+        }
+        h1, h2, h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        .demo-box {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        input, select {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .highlight {
+            background-color: yellow;
+            padding: 5px;
+        }
+        .modified {
+            background-color: #ffeb3b;
+            border: 2px solid #ffc107;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .list-container {
+            margin: 10px 0;
+        }
+        .list-container li {
+            padding: 8px;
+            margin: 5px 0;
+            background: #e9ecef;
+            border-radius: 4px;
+        }
+        .element-chain {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .element-chain div {
+            padding: 15px;
+            background: #17a2b8;
+            color: white;
+            border-radius: 4px;
+            min-width: 80px;
+            text-align: center;
+        }
+        .result-box {
+            background: #d4edda;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            display: none;
+        }
+        .active {
+            background: #28a745 !important;
+        }
+        .task-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .task-nav button {
+            background: #6c757d;
+        }
+        .task-nav button:hover {
+            background: #545b62;
+        }
+    </style>
+</head>
+<body>
+    <h1>Лабораторна робота - jQuery методи</h1>
+    
+    <div class="task-nav">
+        <button onclick="showTask(1)">Завдання 1</button>
+        <button onclick="showTask(2)">Завдання 2</button>
+        <button onclick="showTask(3)">Завдання 3</button>
+        <button onclick="showTask(4)">Завдання 4</button>
+        <button onclick="showTask(5)">Завдання 5</button>
+    </div>
+
+    <!-- Завдання 1 -->
+    <div id="task1" class="task-section">
+        <h2>Завдання 1 - Основні методи jQuery</h2>
+        
+        <!-- .html() демонстрація -->
+        <div class="demo-box">
+            <h3>.html() метод</h3>
+            <div id="html-demo">
+                <p>Початковий текст для демонстрації</p>
+            </div>
+            <button id="html-get">Отримати HTML</button>
+            <button id="html-set">Встановити HTML</button>
+        </div>
+
+        <!-- .css() демонстрація -->
+        <div class="demo-box">
+            <h3>.css() метод</h3>
+            <p id="css-demo">Текст для стилізації</p>
+            <button id="css-get">Отримати стилі</button>
+            <button id="css-set">Змінити стилі</button>
+        </div>
+
+        <!-- .val() демонстрація -->
+        <div class="demo-box">
+            <h3>.val() метод</h3>
+            <input type="text" id="text-input" value="Початкове значення">
+            <select id="select-input">
+                <option value="opt1">Опція 1</option>
+                <option value="opt2">Опція 2</option>
+                <option value="opt3">Опція 3</option>
+            </select>
+            <button id="val-get">Отримати значення</button>
+            <button id="val-set">Встановити значення</button>
+        </div>
+
+        <!-- .attr() демонстрація -->
+        <div class="demo-box">
+            <h3>.attr() метод</h3>
+            <img id="attr-demo" src="https://via.placeholder.com/150" alt="Початкове зображення" width="150" height="150">
+            <br>
+            <button id="attr-get">Отримати атрибут src</button>
+            <button id="attr-set">Змінити атрибут src</button>
+            <button id="attr-multi">Встановити кілька атрибутів</button>
+            <button id="attr-func">Атрибут через функцію</button>
+        </div>
+
+        <!-- .removeAttr() демонстрація -->
+        <div class="demo-box">
+            <h3>.removeAttr() метод</h3>
+            <div id="remove-attr-demo" class="highlight" title="Цей атрибут буде видалено" data-custom="custom-data">
+                Елемент з атрибутами для видалення
+            </div>
+            <button id="remove-attr">Видалити атрибут title</button>
+        </div>
+    </div>
+
+    <!-- Завдання 2 -->
+    <div id="task2" class="task-section" style="display: none;">
+        <h2>Завдання 2 - Спеціальні методи</h2>
+        
+        <!-- .insertBefore() демонстрація -->
+        <div class="demo-box">
+            <h3>.insertBefore() метод</h3>
+            <div class="element-chain">
+                <div id="target-element">Цільовий елемент</div>
+                <div>Елемент 2</div>
+                <div>Елемент 3</div>
+            </div>
+            <button id="insert-before-btn">Вставити новий елемент перед цільовим</button>
+        </div>
+
+        <!-- .empty() демонстрація -->
+        <div class="demo-box">
+            <h3>.empty() метод</h3>
+            <div id="empty-demo">
+                <p>Цей параграф буде видалений</p>
+                <span>Цей span такось буде видалений</span>
+                <ul>
+                    <li>Елемент списку 1</li>
+                    <li>Елемент списку 2</li>
+                </ul>
+            </div>
+            <button id="empty-btn">Очистити контейнер</button>
+        </div>
+
+        <!-- .height() з функцією демонстрація -->
+        <div class="demo-box">
+            <h3>.height(функція) метод</h3>
+            <div id="height-demo" style="background: #007bff; color: white; padding: 10px; margin: 10px 0;">
+                Елемент для зміни висоти
+            </div>
+            <button id="height-btn">Збільшити висоту на 50px</button>
+        </div>
+
+        <!-- .outerWidth() демонстрація -->
+        <div class="demo-box">
+            <h3>.outerWidth() метод</h3>
+            <div id="outerwidth-demo" style="width: 200px; padding: 20px; margin: 10px; border: 5px solid #007bff; background: #e9ecef;">
+                Елемент для виміру outerWidth
+            </div>
+            <button id="outerwidth-btn">Отримати outerWidth</button>
+        </div>
+    </div>
+
+    <!-- Завдання 3 -->
+    <div id="task3" class="task-section" style="display: none;">
+        <h2>Завдання 3 - Методи навігації</h2>
+        
+        <div class="demo-box">
+            <h3>Тестувальна структура:</h3>
+            <div class="element-chain">
+                <div class="nav-element" id="start">Start</div>
+                <div class="nav-element">Element 1</div>
+                <div class="nav-element special">Special Element</div>
+                <div class="nav-element">Element 2</div>
+                <div class="nav-element">Element 3</div>
+                <div class="nav-element" id="end">End</div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <button id="each-btn">.each() - перебрати всі елементи</button>
+                <button id="next-btn">.next() - наступний елемент</button>
+                <button id="prevall-btn">.prevAll() - всі попередні</button>
+                <button id="contents-btn">.contents() - вміст контейнера</button>
+                <button id="nextuntil-btn">.nextUntil() - елементи до кінця</button>
+            </div>
+            
+            <div id="nav-result" class="result-box"></div>
+        </div>
+    </div>
+
+    <!-- Завдання 4 -->
+    <div id="task4" class="task-section" style="display: none;">
+        <h2>Завдання 4 - Метод .filter()</h2>
+        
+        <div class="demo-box">
+            <h3>Фільтрація за класом</h3>
+            <div class="filter-container">
+                <div class="item">Елемент 1</div>
+                <div class="item special-item">Елемент 2 (special)</div>
+                <div class="item">Елемент 3</div>
+                <div class="item special-item">Елемент 4 (special)</div>
+                <div class="item">Елемент 5</div>
+            </div>
+            <button id="filter-class-btn">Застосувати стилі до special-item</button>
+        </div>
+
+        <div class="demo-box">
+            <h3>Фільтрація кожного третього &lt;li&gt;</h3>
+            <ul class="list-container">
+                <li>Елемент списку 1</li>
+                <li>Елемент списку 2</li>
+                <li>Елемент списку 3</li>
+                <li>Елемент списку 4</li>
+                <li>Елемент списку 5</li>
+                <li>Елемент списку 6</li>
+                <li>Елемент списку 7</li>
+                <li>Елемент списку 8</li>
+                <li>Елемент списку 9</li>
+            </ul>
+            <button id="filter-li-btn">Застосувати стилі до кожного третього li</button>
+        </div>
+    </div>
+
+    <!-- Завдання 5 -->
+    <div id="task5" class="task-section" style="display: none;">
+        <h2>Завдання 5 - Утиліти jQuery</h2>
+        
+        <div class="demo-box">
+            <h3>$.grep() - фільтрація масиву</h3>
+            <p>Масив: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</p>
+            <button id="grep-btn">Відфільтрувати парні числа</button>
+            <div id="grep-result" class="result-box"></div>
+        </div>
+
+        <div class="demo-box">
+            <h3>$.inArray() - пошук в масиві</h3>
+            <p>Масив: ['яблуко', 'банан', 'апельсин', 'виноград']</p>
+            <button id="inarray-btn">Знайти індекс 'апельсин'</button>
+            <div id="inarray-result" class="result-box"></div>
+        </div>
+
+        <div class="demo-box">
+            <h3>$.isArray() - перевірка типу</h3>
+            <button id="isarray-btn">Перевірити різні значення</button>
+            <div id="isarray-result" class="result-box"></div>
+        </div>
+    </div>
+
+    <script>
+        // Функція для перемикання між завданнями
+        function showTask(taskNumber) {
+            // Приховати всі завдання
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById('task' + i).style.display = 'none';
+            }
+            // Показати вибране завдання
+            document.getElementById('task' + taskNumber).style.display = 'block';
+        }
+
+        // Показати перше завдання при завантаженні
+        $(document).ready(function() {
+            showTask(1);
+            
+            // ========== ЗАВДАННЯ 1 ==========
+            
+            // .html() методи
+            $('#html-get').click(function() {
+                const htmlContent = $('#html-demo').html();
+                alert('HTML вміст: ' + htmlContent);
+            });
+            
+            $('#html-set').click(function() {
+                $('#html-demo').html('<strong>Новий HTML вміст!</strong> з <em>форматуванням</em> та <span style="color: red;">кольорами</span>');
+            });
+
+            // .css() методи
+            $('#css-get').click(function() {
+                const color = $('#css-demo').css('color');
+                const fontSize = $('#css-demo').css('font-size');
+                alert(`Колір тексту: ${color}\nРозмір шрифту: ${fontSize}`);
+            });
+            
+            $('#css-set').click(function() {
+                $('#css-demo').css({
+                    'color': 'red',
+                    'font-weight': 'bold',
+                    'font-size': '20px',
+                    'background-color': '#ffe6e6',
+                    'padding': '10px',
+                    'border-radius': '5px'
+                });
+            });
+
+            // .val() методи
+            $('#val-get').click(function() {
+                const textVal = $('#text-input').val();
+                const selectVal = $('#select-input').val();
+                alert(`Текстове поле: "${textVal}"\nSelect: "${selectVal}"`);
+            });
+            
+            $('#val-set').click(function() {
+                $('#text-input').val('Нове значення тексту');
+                $('#select-input').val('opt2');
+            });
+
+            // .attr() методи
+            $('#attr-get').click(function() {
+                const src = $('#attr-demo').attr('src');
+                const alt = $('#attr-demo').attr('alt');
+                alert(`SRC: ${src}\nALT: ${alt}`);
+            });
+            
+            $('#attr-set').click(function() {
+                $('#attr-demo').attr('src', 'https://via.placeholder.com/200/ff0000/ffffff?text=Нове+зображення');
+                $('#attr-demo').attr('alt', 'Нове червоне зображення');
+            });
+            
+            $('#attr-multi').click(function() {
+                $('#attr-demo').attr({
+                    'src': 'https://via.placeholder.com/250/0000ff/ffffff?text=Синє+зображення',
+                    'alt': 'Синє зображення',
+                    'width': '250',
+                    'height': '150',
+                    'title': 'Тестове зображення'
+                });
+            });
+            
+            $('#attr-func').click(function() {
+                $('#attr-demo').attr('width', function(index, currentValue) {
+                    const newWidth = parseInt(currentValue) + 50;
+                    return newWidth + 'px';
+                });
+            });
+
+            // .removeAttr() метод
+            $('#remove-attr').click(function() {
+                $('#remove-attr-demo').removeAttr('title');
+                alert('Атрибут title видалено! Спробуйте навести курсор на елемент - підказки більше немає.');
+            });
+
+            // ========== ЗАВДАННЯ 2 ==========
+            
+            // .insertBefore() метод
+            $('#insert-before-btn').click(function() {
+                $('<div style="background: #28a745;">НОВИЙ ЕЛЕМЕНТ</div>').insertBefore('#target-element');
+            });
+
+            // .empty() метод
+            $('#empty-btn').click(function() {
+                $('#empty-demo').empty();
+                $('#empty-demo').append('<p>Контейнер очищено!</p>');
+            });
+
+            // .height() з функцією
+            $('#height-btn').click(function() {
+                $('#height-demo').height(function(index, currentHeight) {
+                    return currentHeight + 50;
+                });
+                const newHeight = $('#height-demo').height();
+                alert('Нова висота: ' + newHeight + 'px');
+            });
+
+            // .outerWidth() метод
+            $('#outerwidth-btn').click(function() {
+                const outerWidth = $('#outerwidth-demo').outerWidth();
+                const outerWidthWithMargin = $('#outerwidth-demo').outerWidth(true);
+                alert(`outerWidth(): ${outerWidth}px\nouterWidth(true): ${outerWidthWithMargin}px`);
+            });
+
+            // ========== ЗАВДАННЯ 3 ==========
+            
+            // .each() метод
+            $('#each-btn').click(function() {
+                let result = 'Метод .each() - перебір всіх елементів:\n';
+                $('.nav-element').each(function(index) {
+                    result += `Індекс ${index}: ${$(this).text()}\n`;
+                });
+                $('#nav-result').text(result).show();
+            });
+
+            // .next() метод
+            $('#next-btn').click(function() {
+                const nextElement = $('.special').next();
+                $('#nav-result').text('Метод .next() - наступний елемент: ' + nextElement.text()).show();
+                highlightElement(nextElement);
+            });
+
+            // .prevAll() метод
+            $('#prevall-btn').click(function() {
+                let result = 'Метод .prevAll() - всі попередні елементи:\n';
+                $('.special').prevAll().each(function(index) {
+                    result += $(this).text() + '\n';
+                });
+                $('#nav-result').text(result).show();
+                highlightElement($('.special').prevAll());
+            });
+
+            // .contents() метод
+            $('#contents-btn').click(function() {
+                const contents = $('.element-chain').contents();
+                let result = 'Метод .contents() - знайдено ' + contents.length + ' вузлів (елементи + текстові вузли)';
+                $('#nav-result').text(result).show();
+            });
+
+            // .nextUntil() метод
+            $('#nextuntil-btn').click(function() {
+                let result = 'Метод .nextUntil() - елементи між special та end:\n';
+                $('.special').nextUntil('#end').each(function() {
+                    result += $(this).text() + '\n';
+                });
+                $('#nav-result').text(result).show();
+                highlightElement($('.special').nextUntil('#end'));
+            });
+
+            function highlightElement(elements) {
+                $('.nav-element').removeClass('active');
+                elements.addClass('active');
+            }
+
+            // ========== ЗАВДАННЯ 4 ==========
+            
+            // Фільтрація за класом
+            $('#filter-class-btn').click(function() {
+                $('.item').filter('.special-item')
+                    .addClass('modified')
+                    .append(' - modify');
+            });
+
+            // Фільтрація кожного третього li
+            $('#filter-li-btn').click(function() {
+                $('li').filter(function(index) {
+                    return index % 3 === 2; // Кожен третій (індекс 2, 5, 8...)
+                }).addClass('modified')
+                  .append(' - modify');
+            });
+
+            // ========== ЗАВДАННЯ 5 ==========
+            
+            // $.grep() - фільтрація масиву
+            $('#grep-btn').click(function() {
+                const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                const evenNumbers = $.grep(numbers, function(number) {
+                    return number % 2 === 0;
+                });
+                $('#grep-result').html(`Парні числа: [${evenNumbers.join(', ')}]`).show();
+            });
+
+            // $.inArray() - пошук в масиві
+            $('#inarray-btn').click(function() {
+                const fruits = ['яблуко', 'банан', 'апельсин', 'виноград'];
+                const index = $.inArray('апельсин', fruits);
+                $('#inarray-result').html(`'апельсин' знайдено за індексом: ${index}`).show();
+            });
+
+            // $.isArray() - перевірка типу
+            $('#isarray-btn').click(function() {
+                const tests = [
+                    { value: [1, 2, 3], name: 'Масив [1, 2, 3]' },
+                    { value: 'рядок', name: 'Рядок "рядок"' },
+                    { value: 123, name: 'Число 123' },
+                    { value: {a: 1}, name: 'Об\'єкт {a: 1}' }
+                ];
+                
+                let result = 'Результати перевірки $.isArray():\n';
+                tests.forEach(function(test) {
+                    result += `${test.name}: ${$.isArray(test.value) ? 'Так' : 'Ні'}\n`;
+                });
+                
+                $('#isarray-result').text(result).show();
+            });
+        });
+    </script>
+</body>
+</html>
