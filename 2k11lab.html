@@ -132,7 +132,7 @@
     <div id="task1" class="task-section">
         <h2>Завдання 1 - Основні методи jQuery</h2>
         
-        <!-- .html() демонстрація -->
+      
         <div class="demo-box">
             <h3>.html() метод</h3>
             <div id="html-demo">
@@ -142,7 +142,7 @@
             <button id="html-set">Встановити HTML</button>
         </div>
 
-        <!-- .css() демонстрація -->
+      
         <div class="demo-box">
             <h3>.css() метод</h3>
             <p id="css-demo">Текст для стилізації</p>
@@ -150,7 +150,7 @@
             <button id="css-set">Змінити стилі</button>
         </div>
 
-        <!-- .val() демонстрація -->
+      
         <div class="demo-box">
             <h3>.val() метод</h3>
             <input type="text" id="text-input" value="Початкове значення">
@@ -163,7 +163,7 @@
             <button id="val-set">Встановити значення</button>
         </div>
 
-        <!-- .attr() демонстрація -->
+        
         <div class="demo-box">
             <h3>.attr() метод</h3>
             <img id="attr-demo" src="https://via.placeholder.com/150" alt="Початкове зображення" width="150" height="150">
@@ -174,7 +174,7 @@
             <button id="attr-func">Атрибут через функцію</button>
         </div>
 
-        <!-- .removeAttr() демонстрація -->
+        
         <div class="demo-box">
             <h3>.removeAttr() метод</h3>
             <div id="remove-attr-demo" class="highlight" title="Цей атрибут буде видалено" data-custom="custom-data">
@@ -188,7 +188,7 @@
     <div id="task2" class="task-section" style="display: none;">
         <h2>Завдання 2 - Спеціальні методи</h2>
         
-        <!-- .insertBefore() демонстрація -->
+        
         <div class="demo-box">
             <h3>.insertBefore() метод</h3>
             <div class="element-chain">
@@ -199,7 +199,7 @@
             <button id="insert-before-btn">Вставити новий елемент перед цільовим</button>
         </div>
 
-        <!-- .empty() демонстрація -->
+        
         <div class="demo-box">
             <h3>.empty() метод</h3>
             <div id="empty-demo">
@@ -213,7 +213,7 @@
             <button id="empty-btn">Очистити контейнер</button>
         </div>
 
-        <!-- .height() з функцією демонстрація -->
+        
         <div class="demo-box">
             <h3>.height(функція) метод</h3>
             <div id="height-demo" style="background: #007bff; color: white; padding: 10px; margin: 10px 0;">
@@ -222,7 +222,7 @@
             <button id="height-btn">Збільшити висоту на 50px</button>
         </div>
 
-        <!-- .outerWidth() демонстрація -->
+        
         <div class="demo-box">
             <h3>.outerWidth() метод</h3>
             <div id="outerwidth-demo" style="width: 200px; padding: 20px; margin: 10px; border: 5px solid #007bff; background: #e9ecef;">
@@ -318,23 +318,22 @@
     </div>
 
     <script>
-        // Функція для перемикання між завданнями
+        
         function showTask(taskNumber) {
-            // Приховати всі завдання
             for (let i = 1; i <= 5; i++) {
                 document.getElementById('task' + i).style.display = 'none';
             }
-            // Показати вибране завдання
+           
             document.getElementById('task' + taskNumber).style.display = 'block';
         }
 
-        // Показати перше завдання при завантаженні
+  
         $(document).ready(function() {
             showTask(1);
             
             // ========== ЗАВДАННЯ 1 ==========
             
-            // .html() методи
+
             $('#html-get').click(function() {
                 const htmlContent = $('#html-demo').html();
                 alert('HTML вміст: ' + htmlContent);
@@ -344,7 +343,7 @@
                 $('#html-demo').html('<strong>Новий HTML вміст!</strong> з <em>форматуванням</em> та <span style="color: red;">кольорами</span>');
             });
 
-            // .css() методи
+         
             $('#css-get').click(function() {
                 const color = $('#css-demo').css('color');
                 const fontSize = $('#css-demo').css('font-size');
@@ -362,7 +361,7 @@
                 });
             });
 
-            // .val() методи
+           
             $('#val-get').click(function() {
                 const textVal = $('#text-input').val();
                 const selectVal = $('#select-input').val();
@@ -374,7 +373,7 @@
                 $('#select-input').val('opt2');
             });
 
-            // .attr() методи
+       
             $('#attr-get').click(function() {
                 const src = $('#attr-demo').attr('src');
                 const alt = $('#attr-demo').attr('alt');
@@ -403,7 +402,7 @@
                 });
             });
 
-            // .removeAttr() метод
+            
             $('#remove-attr').click(function() {
                 $('#remove-attr-demo').removeAttr('title');
                 alert('Атрибут title видалено! Спробуйте навести курсор на елемент - підказки більше немає.');
@@ -411,18 +410,18 @@
 
             // ========== ЗАВДАННЯ 2 ==========
             
-            // .insertBefore() метод
+       
             $('#insert-before-btn').click(function() {
                 $('<div style="background: #28a745;">НОВИЙ ЕЛЕМЕНТ</div>').insertBefore('#target-element');
             });
 
-            // .empty() метод
+          
             $('#empty-btn').click(function() {
                 $('#empty-demo').empty();
                 $('#empty-demo').append('<p>Контейнер очищено!</p>');
             });
 
-            // .height() з функцією
+           
             $('#height-btn').click(function() {
                 $('#height-demo').height(function(index, currentHeight) {
                     return currentHeight + 50;
@@ -431,7 +430,6 @@
                 alert('Нова висота: ' + newHeight + 'px');
             });
 
-            // .outerWidth() метод
             $('#outerwidth-btn').click(function() {
                 const outerWidth = $('#outerwidth-demo').outerWidth();
                 const outerWidthWithMargin = $('#outerwidth-demo').outerWidth(true);
@@ -440,7 +438,7 @@
 
             // ========== ЗАВДАННЯ 3 ==========
             
-            // .each() метод
+         
             $('#each-btn').click(function() {
                 let result = 'Метод .each() - перебір всіх елементів:\n';
                 $('.nav-element').each(function(index) {
@@ -449,14 +447,14 @@
                 $('#nav-result').text(result).show();
             });
 
-            // .next() метод
+ 
             $('#next-btn').click(function() {
                 const nextElement = $('.special').next();
                 $('#nav-result').text('Метод .next() - наступний елемент: ' + nextElement.text()).show();
                 highlightElement(nextElement);
             });
 
-            // .prevAll() метод
+        
             $('#prevall-btn').click(function() {
                 let result = 'Метод .prevAll() - всі попередні елементи:\n';
                 $('.special').prevAll().each(function(index) {
@@ -466,14 +464,14 @@
                 highlightElement($('.special').prevAll());
             });
 
-            // .contents() метод
+        
             $('#contents-btn').click(function() {
                 const contents = $('.element-chain').contents();
                 let result = 'Метод .contents() - знайдено ' + contents.length + ' вузлів (елементи + текстові вузли)';
                 $('#nav-result').text(result).show();
             });
 
-            // .nextUntil() метод
+       
             $('#nextuntil-btn').click(function() {
                 let result = 'Метод .nextUntil() - елементи між special та end:\n';
                 $('.special').nextUntil('#end').each(function() {
@@ -490,24 +488,24 @@
 
             // ========== ЗАВДАННЯ 4 ==========
             
-            // Фільтрація за класом
+            
             $('#filter-class-btn').click(function() {
                 $('.item').filter('.special-item')
                     .addClass('modified')
                     .append(' - modify');
             });
 
-            // Фільтрація кожного третього li
+          
             $('#filter-li-btn').click(function() {
                 $('li').filter(function(index) {
-                    return index % 3 === 2; // Кожен третій (індекс 2, 5, 8...)
+                    return index % 3 === 2;
                 }).addClass('modified')
                   .append(' - modify');
             });
 
             // ========== ЗАВДАННЯ 5 ==========
             
-            // $.grep() - фільтрація масиву
+         
             $('#grep-btn').click(function() {
                 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
                 const evenNumbers = $.grep(numbers, function(number) {
@@ -516,14 +514,14 @@
                 $('#grep-result').html(`Парні числа: [${evenNumbers.join(', ')}]`).show();
             });
 
-            // $.inArray() - пошук в масиві
+           
             $('#inarray-btn').click(function() {
                 const fruits = ['яблуко', 'банан', 'апельсин', 'виноград'];
                 const index = $.inArray('апельсин', fruits);
                 $('#inarray-result').html(`'апельсин' знайдено за індексом: ${index}`).show();
             });
 
-            // $.isArray() - перевірка типу
+            
             $('#isarray-btn').click(function() {
                 const tests = [
                     { value: [1, 2, 3], name: 'Масив [1, 2, 3]' },
@@ -542,4 +540,5 @@
         });
     </script>
 </body>
+
 </html>
