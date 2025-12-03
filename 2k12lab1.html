@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Завдання 1 – jQuery анімації</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    #box {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: relative;
+        margin: 20px;
+        text-align: center;
+        line-height: 100px;
+        color: white;
+        font-weight: bold;
+    }
+    button {
+        margin: 10px;
+        padding: 10px 20px;
+    }
+</style>
+</head>
+<body>
+<h2>Завдання 1 – демонстрація методів jQuery</h2>
+
+<div id="box">BOX</div>
+<button id="start">Старт анімацій</button>
+
+<script>
+$(document).ready(function(){
+    $("#start").click(function(){
+
+    
+        $("#box").stop(true, true);
+
+       
+        $("#box").animate({width: "200px", height: "200px"}, 1000, "swing", function(){
+            console.log("Перший етап анімації завершено");
+        });
+
+        
+        $("#box").delay(500).animate({left: "150px"}, 1000, function(){
+            console.log("Анімація здвигу завершена");
+        });
+
+        
+        $("#box").fadeTo(1000, 0.5, function(){
+            console.log("Напівпрозорість застосована");
+        });
+
+        
+        $("#box").fadeOut(500).fadeIn(1000);
+
+ 
+        $("#box")
+            .queue(function(next){
+                $(this).css("background", "green");
+                console.log("Змінили колір на зелений");
+                next();
+            })
+            .queue(function(next){
+                $(this).css("background", "orange");
+                console.log("Змінили колір на оранжевий");
+                next();
+            })
+           
+            .clearQueue();
+    });
+});
+</script>
+</body>
+</html>
